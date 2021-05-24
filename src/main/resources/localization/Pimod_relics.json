@@ -1,0 +1,9 @@
+{
+  "Pimod_goldenApple": {
+    "NAME": "金苹果",
+    "FLAVOR": "太好了！",
+    "DESCRIPTIONS": [
+      "每次战斗开始获得1费用"
+    ]
+  }
+}

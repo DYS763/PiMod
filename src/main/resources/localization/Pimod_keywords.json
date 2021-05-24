@@ -1,0 +1,26 @@
+{
+  "keywords": [
+
+      {
+      "NAMES": [
+          "WWWWWWWWWWWWWWWWWWW"
+        ],
+        "DESCRIPTION":"WWWWWWWWWWWWWWWWWWWWW"
+      },
+
+    {
+      "NAMES": [
+        "测试关键字"
+      ],
+      "DESCRIPTION": "当你看到这个，就说明测试关键字生效了。"
+
+    },
+    {
+      "NAMES": [
+        "力量"
+      ],
+      "DESCRIPTION": "力量buff"
+
+    }
+  ]
+}

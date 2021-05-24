@@ -1,0 +1,10 @@
+{
+  "modid": "pimMod",
+  "name": "piMod",
+  "author_list": ["Daiyousei","雪之下雪奶酪"],
+  "description": "少年pimod",
+  "version": "0.0.1",
+  "sts_version": "12-22-2020",
+  "mts_version": "2.6.0",
+  "dependencies": ["basemod"]
+}

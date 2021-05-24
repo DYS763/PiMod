@@ -1,0 +1,69 @@
+{
+  "flare": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 ,  测试关键字  。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+
+  "Strike_PI": {
+    "NAME": "api打击",
+    "DESCRIPTION": "测试用api打击",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+
+  "Defend_PI": {
+    "NAME": "api防御",
+    "DESCRIPTION": "测试用api防御",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare1": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础， 测试关键字 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare2": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare3": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare01": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare02": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare03": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare11": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare12": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "flare13": {
+    "NAME": "测试",
+    "DESCRIPTION": "测试基础 。",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  },
+  "Moniyixia": {
+    "NAME": "模拟一下",
+    "DESCRIPTION": "造成 !D! 点伤害，受到3倍 力量 影响",
+    "UPGRADE_DESCRIPTION": " 测试升级。"
+  }
+}
