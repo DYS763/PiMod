@@ -63,8 +63,18 @@
   },
   "Furou": {
     "NAME": "腐肉",
-    "DESCRIPTION": "恢复 !M! 点生命，获得2点易伤, 消耗 ",
-    "UPGRADE_DESCRIPTION": "恢复 !M! 点生命，获得2点易伤, 消耗 "
+    "DESCRIPTION": "恢复 !M! 点生命，获得2层 易伤 , 消耗 ",
+    "UPGRADE_DESCRIPTION": "恢复 !M! 点生命，获得2层 易伤 , 消耗 "
+  },
+  "Yinggangguangxian": {
+    "NAME": "硬刚光线",
+    "DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 虚弱 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 虚弱 "
+  },
+  "Youjiguangxian": {
+    "NAME": "游击光线",
+    "DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 易伤 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 易伤 "
   },
   "Moniyixia": {
     "NAME": "摸你一下",
