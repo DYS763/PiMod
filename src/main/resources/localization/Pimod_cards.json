@@ -81,6 +81,11 @@
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害 !M! 次,增加一张 虚空 至你的牌库",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次,增加一张 虚空 至你的牌库"
   },
+  "Niunai": {
+    "NAME": "牛奶",
+    "DESCRIPTION": "清除所有debuff NL 消耗 ",
+    "UPGRADE_DESCRIPTION": "清除所有debuff NL 消耗 , 固有 , 保留 "
+  },
   "Moniyixia": {
     "NAME": "摸你一下",
     "DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响",

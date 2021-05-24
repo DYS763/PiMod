@@ -93,6 +93,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new Yinggangguangxian());
         this.cardsToAdd.add(new Youjiguangxian());
         this.cardsToAdd.add(new Chengzhineifire());
+        this.cardsToAdd.add(new Niunai());
     }
 
     @Override
