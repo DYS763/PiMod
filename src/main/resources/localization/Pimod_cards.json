@@ -76,6 +76,11 @@
     "DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 易伤 ",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 易伤 "
   },
+  "Chengzhineifire": {
+    "NAME": "城之内Fire",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害 !M! 次,增加一张 虚空 至你的牌库",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害 !M! 次,增加一张 虚空 至你的牌库"
+  },
   "Moniyixia": {
     "NAME": "摸你一下",
     "DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响",
