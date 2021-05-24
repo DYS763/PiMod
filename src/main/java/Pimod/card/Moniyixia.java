@@ -2,13 +2,17 @@ package Pimod.card;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class Moniyixia extends CustomCard{//“extends CustomCard” 继承basemod的CustomCard类，可以理解为继承了卡牌所需要的几个基本组成部件。
 
@@ -36,21 +40,46 @@ public class Moniyixia extends CustomCard{//“extends CustomCard” 继承basem
 	public Moniyixia() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
 		this.baseDamage = 1;
-		this.damage = 3;
+		this.baseMagicNumber = 3;
+		this.magicNumber = this.baseMagicNumber;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+		this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 	}
 
 	public AbstractCard makeCopy() {
 		return new Moniyixia();
 	}
+	public void applyPowers() {
+		AbstractPower strength = AbstractDungeon.player.getPower("Strength");
+		if (strength != null) {
+			strength.amount *= this.magicNumber;
+		}
+
+		super.applyPowers();
+		if (strength != null) {
+			strength.amount /= this.magicNumber;
+		}
+
+	}
+	public void calculateCardDamage(AbstractMonster mo) {
+		AbstractPower strength = AbstractDungeon.player.getPower("Strength");
+		if (strength != null) {
+			strength.amount *= this.magicNumber;
+		}
+
+		super.calculateCardDamage(mo);
+		if (strength != null) {
+			strength.amount /= this.magicNumber;
+		}
+
+	}
 
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeBlock(3);
+			this.upgradeMagicNumber(2);
 		}
 
 	}

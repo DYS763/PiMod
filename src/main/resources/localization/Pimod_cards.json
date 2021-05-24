@@ -62,8 +62,8 @@
     "UPGRADE_DESCRIPTION": " 测试升级。"
   },
   "Moniyixia": {
-    "NAME": "模拟一下",
-    "DESCRIPTION": "造成 !D! 点伤害，受到3倍 力量 影响",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
+    "NAME": "摸你一下",
+    "DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响"
   }
 }
