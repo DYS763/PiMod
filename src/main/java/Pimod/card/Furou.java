@@ -3,8 +3,10 @@ package Pimod.card;
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,8 +15,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class Moniyixia extends CustomCard{//“extends CustomCard” 继承basemod的CustomCard类，可以理解为继承了卡牌所需要的几个基本组成部件。
+public class Furou extends CustomCard{//“extends CustomCard” 继承basemod的CustomCard类，可以理解为继承了卡牌所需要的几个基本组成部件。
 
 	public static final String ID = "Furou";
 	public static final String IMG_PATH = "cards/furou.png";
@@ -37,55 +40,34 @@ public class Moniyixia extends CustomCard{//“extends CustomCard” 继承basem
 	private static final int COST = 0;//卡牌的费用。
 	
 	//注：以上声明的五个变量并非强制需要。仅出于代码的美观考虑而写。
-	public Moniyixia() {
-		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF;
-		this.baseDamage = -3
-		this.baseMagicNumber = 2
+	public Furou() {
+		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
+		this.baseMagicNumber = 5;
 		this.magicNumber = this.baseMagicNumber;
+		this.tags.add(CardTags.HEALING);
+		this.exhaust = true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+		this.addToBot(new HealAction(p, p, this.magicNumber));
+		this.addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, 2, false), 2));
 	}
 
 	public AbstractCard makeCopy() {
-		return new Furou
+		return new Furou();
 	}
-	public void applyPowers() {
-		AbstractPower strength = AbstractDungeon.player.getPower("Strength");
-		if (strength != null) {
-			strength.amount *= this.magicNumber;
-		}
 
-		super.applyPowers();
-		if (strength != null) {
-			strength.amount /= this.magicNumber;
-		}
-
-	}
-	public void calculateCardDamage(AbstractMonster mo) {
-		AbstractPower strength = AbstractDungeon.player.getPower("Strength");
-		if (strength != null) {
-			strength.amount *= this.magicNumber;
-		}
-
-		super.calculateCardDamage(mo);
-		if (strength != null) {
-			strength.amount /= this.magicNumber;
-		}
-
-	}
 
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(2);
+			this.upgradeMagicNumber(3);
 		}
 
 	}
 
 	static {
-		cardStrings = CardCrawlGame.languagePack.getCardStrings("Moniyixia");
+		cardStrings = CardCrawlGame.languagePack.getCardStrings("Furou");
 		NAME = cardStrings.NAME;
 		DESCRIPTION = cardStrings.DESCRIPTION;
 	}

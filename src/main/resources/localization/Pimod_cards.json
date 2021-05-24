@@ -61,6 +61,11 @@
     "DESCRIPTION": "测试基础 。",
     "UPGRADE_DESCRIPTION": " 测试升级。"
   },
+  "Furou": {
+    "NAME": "腐肉",
+    "DESCRIPTION": "恢复 !M! 点生命，获得2点易伤",
+    "UPGRADE_DESCRIPTION": "恢复 !M! 点生命，获得2点易伤"
+  },
   "Moniyixia": {
     "NAME": "摸你一下",
     "DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响",

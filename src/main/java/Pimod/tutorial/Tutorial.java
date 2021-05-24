@@ -89,6 +89,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new flare02());
         this.cardsToAdd.add(new flare03());
         this.cardsToAdd.add(new Moniyixia());
+        this.cardsToAdd.add(new Furou());
     }
 
     @Override
