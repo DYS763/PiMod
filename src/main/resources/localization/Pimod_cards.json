@@ -90,5 +90,10 @@
     "NAME": "摸你一下",
     "DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响"
+  },
+  "meide": {
+    "NAME": "美德老",
+    "DESCRIPTION": "清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。",
+    "UPGRADE_DESCRIPTION": " 清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。"
   }
 }
