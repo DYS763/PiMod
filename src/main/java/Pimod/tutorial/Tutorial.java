@@ -1,6 +1,7 @@
 package Pimod.tutorial;
 import Pimod.card.*;
 import Pimod.characters.A_PI;
+import Pimod.campfire.*;
 import Pimod.patches.AbstractCardEnum;
 import Pimod.patches.PIClassEnum;
 import Pimod.relic.goldenApple;
@@ -10,6 +11,7 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -20,7 +22,9 @@ import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import com.megacrit.cardcrawl.ui.campfire.DigOption;
+import org.apache.commons.codec.Charsets;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -28,10 +32,12 @@ import java.util.Iterator;
 
 
 @SpireInitializer
-public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubscriber, EditStringsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber ,EditKeywordsSubscriber{
+public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubscriber, EditStringsSubscriber,
+        EditRelicsSubscriber, EditCharactersSubscriber ,EditKeywordsSubscriber,PostInitializeSubscriber{
     public static final Logger logger = LogManager.getLogger(Tutorial.class.getName());
     public static final Color PICOLOR = CardHelper.getColor(236,102,172);
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList();
+    public static Texture change;
 
     public Tutorial() {
         BaseMod.subscribe(this);
@@ -103,6 +109,9 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         //给人物添加遗物
         logger.info(">>>初始化完成<<<");
     }
+    public void receivePostInitialize() {
+        change = new Texture(Gdx.files.internal("img/UI/campfire/ShopOnline.png"));
+    }
     @Override
     public void receiveEditStrings() {
         String relic;
@@ -110,12 +119,14 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         String power;
         String potion;
         String event;
+        String UI;
         logger.info("lang == zhs");
         card = "localization/Pimod_cards.json";
         relic = "localization/Pimod_relics.json";
         power = "localization/Pimod_powers.json";
         potion = "localization/Pimod_potions.json";
         event = "localization/Pimod_events.json";
+        UI = "localization/Pimod_ui.json";
         String relicStrings = Gdx.files.internal(relic).readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
         String cardStrings = Gdx.files.internal(card).readString(String.valueOf(StandardCharsets.UTF_8));
@@ -126,6 +137,8 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
         String eventStrings = Gdx.files.internal(event).readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+        String UIStrings=Gdx.files.internal(UI).readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(UIStrings.class, UIStrings);
         logger.info("done editing strings");
         receiveJson("卡牌", "Pimod_cards.json", CardStrings.class);
     }
