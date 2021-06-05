@@ -1,11 +1,11 @@
 package Pimod.campfire.campfireOption;
 
+import Pimod.campfire.campfireEffect.changeEffect;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-import com.megacrit.cardcrawl.vfx.campfire.CampfireDigEffect;
 import Pimod.tutorial.Tutorial;
 public class changeOption extends AbstractCampfireOption {
     private static final UIStrings uiStrings;
@@ -17,7 +17,7 @@ public class changeOption extends AbstractCampfireOption {
         this.img = ImageMaster.CAMPFIRE_DIG_BUTTON;
     }
     public void useOption() {
-        AbstractDungeon.effectList.add(new CampfireDigEffect());
+        AbstractDungeon.effectList.add(new changeEffect());
     }
 
 
