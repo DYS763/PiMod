@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
+import Pimod.cardActions.getRandomPiCards;
 import java.util.ArrayList;
 
 public class changeEffect extends AbstractGameEffect {
@@ -39,7 +39,7 @@ public class changeEffect extends AbstractGameEffect {
             //CardCrawlGame.sound.play("SHOVEL");
 
             AbstractDungeon.getCurrRoom().rewards.clear();
-            ArrayList<AbstractCard> rewardCards = AbstractDungeon.getColorlessRewardCards();
+            ArrayList<AbstractCard> rewardCards = getRandomPiCards.getRandomPiCards();
             if (rewardCards != null && !rewardCards.isEmpty()) {
                 AbstractDungeon.cardRewardScreen.open(rewardCards, null, TEXT[0]);
             }
