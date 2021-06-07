@@ -38,7 +38,6 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
     public static final Color PICOLOR = CardHelper.getColor(236,102,172);
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList();
     public static Texture change;
-
     public Tutorial() {
         BaseMod.subscribe(this);
         logger.info("creating the color:picolor");

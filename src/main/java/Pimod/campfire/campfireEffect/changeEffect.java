@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import Pimod.cardActions.getRandomPiCards;
 import java.util.ArrayList;
 
+
 public class changeEffect extends AbstractGameEffect {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
@@ -44,6 +45,7 @@ public class changeEffect extends AbstractGameEffect {
                 AbstractDungeon.cardRewardScreen.open(rewardCards, null, TEXT[0]);
             }
             AbstractDungeon.getCurrRoom().phase = RoomPhase.COMPLETE;
+
             //CardCrawlGame.metricData.addCampfireChoiceData("DIG");
         }
 
@@ -52,7 +54,6 @@ public class changeEffect extends AbstractGameEffect {
             ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
             AbstractDungeon.getCurrRoom().phase = RoomPhase.COMPLETE;
         }
-
     }
 
     private void updateBlackScreenColor() {

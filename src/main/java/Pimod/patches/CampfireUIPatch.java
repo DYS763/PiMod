@@ -19,7 +19,7 @@ public class CampfireUIPatch {
     }
 
     public static void addChangeOption(ArrayList<AbstractCampfireOption> buttons) {
-        buttons.add(new changeOption());
+        buttons.add(new changeOption(true));
     }
 
     public static class InitializeButtonsPatchLocator extends SpireInsertLocator {
