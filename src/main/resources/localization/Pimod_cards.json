@@ -103,12 +103,12 @@
   },
   "extendstest2": {
     "NAME": "衍生牌测试",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
+    "DESCRIPTION": "2",
+    "UPGRADE_DESCRIPTION": " 2"
   },
   "extendstest3": {
     "NAME": "衍生牌测试",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
+    "DESCRIPTION": "3",
+    "UPGRADE_DESCRIPTION": " 3"
   }
 }

@@ -32,7 +32,6 @@ public class getRandomPiCards {
     public static ArrayList<AbstractCard> getRandomPiCards() {
         ArrayList<AbstractCard> retVal = new ArrayList();
         int numCards = 3;
-
         AbstractCard card;
         for(int i = 0; i < numCards; ++i) {
             AbstractCard.CardRarity rarity = rollRareOrUncommon(colorlessRareChance);
@@ -99,7 +98,7 @@ public class getRandomPiCards {
         }
     }
 
-    private static void addColorlessCards() {
+    private static void addColorlessCards() {//这个是添加卡池函数，方便测试放在这里，实用时应放在主体类的初始化语句
         Iterator var2 = CardLibrary.cards.entrySet().iterator();
 
         while(var2.hasNext()) {

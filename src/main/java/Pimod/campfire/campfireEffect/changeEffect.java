@@ -1,5 +1,6 @@
 package Pimod.campfire.campfireEffect;
 
+import Pimod.patches.AbstractCardEnum;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,12 +11,14 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import Pimod.cardActions.getRandomPiCards;
+import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
+
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class changeEffect extends AbstractGameEffect {
@@ -30,6 +33,20 @@ public class changeEffect extends AbstractGameEffect {
         this.duration = 2.0F;
         this.screenColor.a = 0.0F;
         ((RestRoom)AbstractDungeon.getCurrRoom()).cutFireSound();
+        List<String> curses = new ArrayList();
+        for(int i = AbstractDungeon.player.masterDeck.group.size() - 1; i >= 0; --i) {
+            if (((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).color == AbstractCardEnum.PI_DERIVATIONS
+                    && !((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).inBottleFlame
+                    && !((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).inBottleLightning
+                    && ((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID != "AscendersBane"
+                    && ((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID != "CurseOfTheBell"
+                    && ((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID != "Necronomicurse")
+            {
+                AbstractDungeon.effectList.add(new PurgeCardEffect((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)));
+                curses.add(((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID);
+                AbstractDungeon.player.masterDeck.removeCard((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i));
+            }
+        }
     }
 
     public void update() {
@@ -38,6 +55,19 @@ public class changeEffect extends AbstractGameEffect {
         if (this.duration < 1.0F && !this.hasDug) {
             this.hasDug = true;
             //CardCrawlGame.sound.play("SHOVEL");
+
+            //删除诅咒卡
+
+
+
+
+
+
+
+
+
+
+
 
             AbstractDungeon.getCurrRoom().rewards.clear();
             ArrayList<AbstractCard> rewardCards = getRandomPiCards.getRandomPiCards();
