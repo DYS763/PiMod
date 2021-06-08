@@ -102,6 +102,8 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new Niunai());
         this.cardsToAdd.add(new meide());
         this.cardsToAdd.add(new extendstest1());
+        this.cardsToAdd.add(new extendstest2());
+        this.cardsToAdd.add(new extendstest3());
 
     }
 

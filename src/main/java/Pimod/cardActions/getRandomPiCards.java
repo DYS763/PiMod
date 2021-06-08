@@ -105,7 +105,7 @@ public class getRandomPiCards {
         while(var2.hasNext()) {
             Map.Entry<String, AbstractCard> c = (Map.Entry)var2.next();
             AbstractCard card = (AbstractCard)c.getValue();
-            if (card.color == AbstractCardEnum.PI_COLOR && card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL && card.type != AbstractCard.CardType.STATUS) {
+            if (card.color == AbstractCardEnum.PI_DERIVATIONS && card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL && card.type != AbstractCard.CardType.STATUS) {
                 colorlessCardPool.addToTop(card);
             }
         }

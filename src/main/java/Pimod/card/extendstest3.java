@@ -14,8 +14,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import basemod.abstracts.CustomCard;
 
-public class extendstest1 extends CustomCard {
-    public static final String ID = "extendstest1";
+public class extendstest3 extends CustomCard {
+    public static final String ID = "extendstest3";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
@@ -27,7 +27,7 @@ public class extendstest1 extends CustomCard {
     private static final int VULNERABLE_AMT = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
 
-    public extendstest1() {
+    public extendstest3() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.ATTACK, AbstractCardEnum.PI_DERIVATIONS,
                 CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);

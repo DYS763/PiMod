@@ -97,8 +97,18 @@
     "UPGRADE_DESCRIPTION": " 清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。"
   },
   "extendstest1": {
-    "NAME": "美德老",
-    "DESCRIPTION": "清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。",
-    "UPGRADE_DESCRIPTION": " 清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。"
+    "NAME": "衍生牌测试",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "extendstest2": {
+    "NAME": "衍生牌测试",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "extendstest3": {
+    "NAME": "衍生牌测试",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
   }
 }

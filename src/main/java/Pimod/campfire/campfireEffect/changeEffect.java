@@ -41,6 +41,7 @@ public class changeEffect extends AbstractGameEffect {
 
             AbstractDungeon.getCurrRoom().rewards.clear();
             ArrayList<AbstractCard> rewardCards = getRandomPiCards.getRandomPiCards();
+
             if (rewardCards != null && !rewardCards.isEmpty()) {
                 AbstractDungeon.cardRewardScreen.open(rewardCards, null, TEXT[0]);
             }
