@@ -36,13 +36,14 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         EditRelicsSubscriber, EditCharactersSubscriber ,EditKeywordsSubscriber,PostInitializeSubscriber{
     public static final Logger logger = LogManager.getLogger(Tutorial.class.getName());
     public static final Color PICOLOR = CardHelper.getColor(236,102,172);
+    public static final Color PIEXTENDS = CardHelper.getColor(0,0,0);
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList();
     public static Texture change;
     public Tutorial() {
         BaseMod.subscribe(this);
         logger.info("creating the color:picolor");
         BaseMod.addColor(AbstractCardEnum.PI_COLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
-        BaseMod.addColor(AbstractCardEnum.PI_DERIVATIONS,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
+        BaseMod.addColor(AbstractCardEnum.PI_DERIVATIONS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
     }
 
     public static void initialize() {
@@ -100,6 +101,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new Chengzhineifire());
         this.cardsToAdd.add(new Niunai());
         this.cardsToAdd.add(new meide());
+        this.cardsToAdd.add(new extendstest1());
 
     }
 

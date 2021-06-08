@@ -95,5 +95,10 @@
     "NAME": "美德老",
     "DESCRIPTION": "清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。",
     "UPGRADE_DESCRIPTION": " 清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。"
+  },
+  "extendstest1": {
+    "NAME": "美德老",
+    "DESCRIPTION": "清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。",
+    "UPGRADE_DESCRIPTION": " 清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。"
   }
 }
