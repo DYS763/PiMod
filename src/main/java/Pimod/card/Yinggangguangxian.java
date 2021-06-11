@@ -41,7 +41,7 @@ public class Yinggangguangxian extends CustomCard{//“extends CustomCard” 继
 	
 	//注：以上声明的五个变量并非强制需要。仅出于代码的美观考虑而写。
 	public Yinggangguangxian() {
-		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
+		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
 		this.baseDamage = 7;
 		this.baseMagicNumber = 1;
 		this.magicNumber = this.baseMagicNumber;

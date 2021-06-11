@@ -24,7 +24,7 @@ public class meide extends CustomCard{
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public meide() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
         this.tags.add(CardTags.STARTER_DEFEND);
         this.baseBlock = 5;
     }

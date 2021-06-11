@@ -33,6 +33,7 @@ public class getRandomPiCards {
         ArrayList<AbstractCard> retVal = new ArrayList();
         int numCards = 3;
         AbstractCard card;
+        addColorlessCards();
         for(int i = 0; i < numCards; ++i) {
             AbstractCard.CardRarity rarity = rollRareOrUncommon(colorlessRareChance);
             card = null;
@@ -77,7 +78,7 @@ public class getRandomPiCards {
 
 
     public static AbstractCard getColorlessCardFromPool(AbstractCard.CardRarity rarity) {
-        addColorlessCards();
+
         AbstractCard retVal;
         switch(rarity) {
             case RARE:
@@ -92,6 +93,13 @@ public class getRandomPiCards {
                     return retVal;
                 }
                 logger.info("UNCOMMON");
+
+            case COMMON:
+                retVal = colorlessCardPool.getRandomCard(true, rarity);
+                if (retVal != null) {
+                    return retVal;
+                }
+                logger.info("COMMON");
             default:
                 logger.info("ERROR: getColorlessCardFromPool");
                 return null;
@@ -109,7 +117,7 @@ public class getRandomPiCards {
             }
         }
 
-        logger.info("COLORLESS CARDS: " + colorlessCardPool.size());
+        logger.info("COLORLESS: " + colorlessCardPool.size());
     }
 
     static {

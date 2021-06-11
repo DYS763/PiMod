@@ -39,6 +39,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
     public static final Color PIEXTENDS = CardHelper.getColor(0,0,0);
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList();
     public static Texture change;
+
     public Tutorial() {
         BaseMod.subscribe(this);
         logger.info("creating the color:picolor");

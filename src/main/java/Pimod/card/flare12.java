@@ -29,7 +29,7 @@ public class flare12 extends CustomCard {
 
     public flare12() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.ATTACK, AbstractCardEnum.PI_COLOR,
+                CardType.SKILL, AbstractCardEnum.PI_COLOR,
                 CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
         this.damage=this.baseDamage = ATTACK_DMG;
@@ -46,7 +46,7 @@ public class flare12 extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new flare();
+        return new flare12();
     }
 
     @Override

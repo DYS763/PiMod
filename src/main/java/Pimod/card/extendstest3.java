@@ -45,7 +45,7 @@ public class extendstest3 extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new extendstest1();
+        return new extendstest3();
     }
 
     @Override
