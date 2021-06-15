@@ -31,11 +31,11 @@ public class changeEffect extends AbstractGameEffect {
     public changeEffect() {
         this.screenColor = AbstractDungeon.fadeColor.cpy();
         this.duration = 2.0F;
-        this.screenColor.a = 0.0F;
+        this.screenColor.a = 0.0F;   //动画效果
         ((RestRoom)AbstractDungeon.getCurrRoom()).cutFireSound();
         List<String> curses = new ArrayList();
         for(int i = AbstractDungeon.player.masterDeck.group.size() - 1; i >= 0; --i) {
-            if (((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).color == AbstractCardEnum.PI_DERIVATIONS
+            if (((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).color == AbstractCardEnum.PI_DERIVATIONS   //遍历人物卡组，把有PI_DERIVATIONS的都删了，以及部分卡牌判断，留着学习
                     && !((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).inBottleFlame
                     && !((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).inBottleLightning
                     && ((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID != "AscendersBane"
@@ -54,30 +54,13 @@ public class changeEffect extends AbstractGameEffect {
         this.updateBlackScreenColor();
         if (this.duration < 1.0F && !this.hasDug) {
             this.hasDug = true;
-            //CardCrawlGame.sound.play("SHOVEL");
-
-            //删除诅咒卡
-
-
-
-
-
-
-
-
-
-
-
-
             AbstractDungeon.getCurrRoom().rewards.clear();
-            ArrayList<AbstractCard> rewardCards = getRandomPiCards.getRandomPiCards();
+            ArrayList<AbstractCard> rewardCards = getRandomPiCards.getRandomPiCards(); //获得卡牌函数
 
             if (rewardCards != null && !rewardCards.isEmpty()) {
                 AbstractDungeon.cardRewardScreen.open(rewardCards, null, TEXT[0]);
             }
             AbstractDungeon.getCurrRoom().phase = RoomPhase.COMPLETE;
-
-            //CardCrawlGame.metricData.addCampfireChoiceData("DIG");
         }
 
         if (this.duration < 0.0F) {

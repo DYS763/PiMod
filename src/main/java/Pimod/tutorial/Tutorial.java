@@ -1,5 +1,6 @@
 package Pimod.tutorial;
 import Pimod.card.*;
+import Pimod.cardActions.addPiCards;
 import Pimod.characters.A_PI;
 import Pimod.campfire.*;
 import Pimod.patches.AbstractCardEnum;
@@ -25,15 +26,17 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.megacrit.cardcrawl.ui.campfire.DigOption;
 import org.apache.commons.codec.Charsets;
-
+import static Pimod.cardActions.getRandomPiCards.PiCardPool;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Iterator;
+import Pimod.powers.withered;
 
 
 @SpireInitializer
 public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubscriber, EditStringsSubscriber,
-        EditRelicsSubscriber, EditCharactersSubscriber ,EditKeywordsSubscriber,PostInitializeSubscriber{
+        EditRelicsSubscriber, EditCharactersSubscriber ,EditKeywordsSubscriber,PostInitializeSubscriber
+        ,OnPowersModifiedSubscriber{
     public static final Logger logger = LogManager.getLogger(Tutorial.class.getName());
     public static final Color PICOLOR = CardHelper.getColor(236,102,172);
     public static final Color PIEXTENDS = CardHelper.getColor(0,0,0);
@@ -105,13 +108,20 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new extendstest1());
         this.cardsToAdd.add(new extendstest2());
         this.cardsToAdd.add(new extendstest3());
+        this.cardsToAdd.add(new extendstest11());
+        this.cardsToAdd.add(new extendstest12());
+        this.cardsToAdd.add(new extendstest13());
+        this.cardsToAdd.add(new extendstest111());
+        this.cardsToAdd.add(new extendstest122());
+        this.cardsToAdd.add(new extendstest133());
+        this.cardsToAdd.add(new diaoling());
 
     }
 
     @Override
     public void receivePostDungeonInitialize() {
         logger.info(">>>初始化开始<<<");
-        //给人物添加遗物
+        new addPiCards();
         logger.info(">>>初始化完成<<<");
     }
     public void receivePostInitialize() {
@@ -146,10 +156,14 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         BaseMod.loadCustomStrings(UIStrings.class, UIStrings);
         logger.info("done editing strings");
         receiveJson("卡牌", "Pimod_cards.json", CardStrings.class);
+        receiveJson("力量", "Pimod_powers.json", PowerStrings.class);
     }
     private void receiveJson(String typeInfo, String jsonFileName, Class<?> className) {
         String cardStrings = Gdx.files.internal("localization/" + jsonFileName).readString("UTF-8");
         BaseMod.loadCustomStrings(className, cardStrings);
+    }
+    public void receivePowersModified() {
+
     }
 
     private static String loadJson(String jsonPath) {

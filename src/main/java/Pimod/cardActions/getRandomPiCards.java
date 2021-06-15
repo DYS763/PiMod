@@ -1,49 +1,40 @@
 package Pimod.cardActions;
-import Pimod.patches.AbstractCardEnum;
-import Pimod.tutorial.Tutorial;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
-import com.megacrit.cardcrawl.random.Random;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRng;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
-import com.megacrit.cardcrawl.saveAndContinue.SaveFile.SaveType;
-import com.megacrit.cardcrawl.core.Settings;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Map;
 
 public class getRandomPiCards {
 
-    public static float colorlessRareChance;
-    public static CardGroup colorlessCardPool;
+    public static float PiRareChance;
+    public static CardGroup PiCardPool;
     public static int cardBlizzRandomizer;
     public static int cardBlizzStartOffset;
     protected static final Logger logger = LogManager.getLogger(AbstractDungeon.class.getName());
 
 
 
-    public static ArrayList<AbstractCard> getRandomPiCards() {
+    public static ArrayList<AbstractCard> getRandomPiCards() { //源码是随机获得无色卡方法，
+        //本类可以作为往卡组添加卡牌的通用参考，具体方法会英语就看得懂
         ArrayList<AbstractCard> retVal = new ArrayList();
         int numCards = 3;
         AbstractCard card;
-        addColorlessCards();
+
         for(int i = 0; i < numCards; ++i) {
-            AbstractCard.CardRarity rarity = rollRareOrUncommon(colorlessRareChance);
+            AbstractCard.CardRarity rarity = rollRareOrUncommon(i);  //卡牌稀有度函数很重要，需要自己后期定义
             card = null;
             switch(rarity) {
                 case UNCOMMON:
-                    card = getColorlessCardFromPool(rarity);
+                    card = getPiCardFromPool(rarity);
                     logger.info("UNCOMMON");
                     break;
                 case RARE:
-                    card = getColorlessCardFromPool(rarity);
+                    card = getPiCardFromPool(rarity);
                     logger.info("RARE");
                     cardBlizzRandomizer = cardBlizzStartOffset;
                     break;
@@ -51,7 +42,7 @@ public class getRandomPiCards {
                     logger.info("WTF?");
             }
 
-            for(; retVal.contains(card); card = getColorlessCardFromPool(rarity)) {
+            for(; retVal.contains(card); card = getPiCardFromPool(rarity)) {
                 if (card != null) {
                     logger.info("DUPE: " + card.originalName);
                 }
@@ -77,25 +68,25 @@ public class getRandomPiCards {
     }
 
 
-    public static AbstractCard getColorlessCardFromPool(AbstractCard.CardRarity rarity) {
+    public static AbstractCard getPiCardFromPool(AbstractCard.CardRarity rarity) {
 
         AbstractCard retVal;
         switch(rarity) {
             case RARE:
-                retVal = colorlessCardPool.getRandomCard(true, rarity);
+                retVal = PiCardPool.getRandomCard(true, rarity);
                 if (retVal != null) {
                     return retVal;
                 }
                 logger.info("RARE");
             case UNCOMMON:
-                retVal = colorlessCardPool.getRandomCard(true, rarity);
+                retVal = PiCardPool.getRandomCard(true, rarity);
                 if (retVal != null) {
                     return retVal;
                 }
                 logger.info("UNCOMMON");
 
             case COMMON:
-                retVal = colorlessCardPool.getRandomCard(true, rarity);
+                retVal = PiCardPool.getRandomCard(true, rarity);
                 if (retVal != null) {
                     return retVal;
                 }
@@ -106,22 +97,9 @@ public class getRandomPiCards {
         }
     }
 
-    private static void addColorlessCards() {//这个是添加卡池函数，方便测试放在这里，实用时应放在主体类的初始化语句
-        Iterator var2 = CardLibrary.cards.entrySet().iterator();
-
-        while(var2.hasNext()) {
-            Map.Entry<String, AbstractCard> c = (Map.Entry)var2.next();
-            AbstractCard card = (AbstractCard)c.getValue();
-            if (card.color == AbstractCardEnum.PI_DERIVATIONS && card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL && card.type != AbstractCard.CardType.STATUS) {
-                colorlessCardPool.addToTop(card);
-            }
-        }
-
-        logger.info("COLORLESS: " + colorlessCardPool.size());
-    }
 
     static {
-        colorlessCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+        PiCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
     }
 
 }

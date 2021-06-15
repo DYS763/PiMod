@@ -24,6 +24,11 @@ public class changeOption extends AbstractCampfireOption {
         this.img = ImageMaster.CAMPFIRE_DIG_BUTTON;
         this.usable = active;
     }
+    /*
+    我觉得代码还是挺好懂的，都是英文 （mole）
+    * */
+
+
     public void useOption() {
         if(usable){
             AbstractDungeon.effectList.add(new changeEffect());
@@ -33,6 +38,8 @@ public class changeOption extends AbstractCampfireOption {
     }
 
     public void update() {
+
+        //用于实现不占篝火行动的代码，从崩坠扒下来的
         float hackScale = (Float) ReflectionHacks.getPrivate(this, AbstractCampfireOption.class, "scale");
         if (this.hb.hovered) {
             if (!this.hb.clickStarted) {
