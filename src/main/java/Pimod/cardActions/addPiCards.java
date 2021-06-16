@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Iterator;
 import java.util.Map;
 
-import static Pimod.cardActions.getRandomPiCards.PiCardPool;
+import static Pimod.cardActions.getRandomExtendsCards.PiCardPool;
 
 public class addPiCards {
     //添加抽卡卡池方法，引用方法时要注意方法的位置

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import Pimod.cardActions.getRandomPiCards;
+import Pimod.cardActions.getRandomExtendsCards;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 import java.util.ArrayList;
@@ -55,7 +55,7 @@ public class changeEffect extends AbstractGameEffect {
         if (this.duration < 1.0F && !this.hasDug) {
             this.hasDug = true;
             AbstractDungeon.getCurrRoom().rewards.clear();
-            ArrayList<AbstractCard> rewardCards = getRandomPiCards.getRandomPiCards(); //获得卡牌函数
+            ArrayList<AbstractCard> rewardCards = getRandomExtendsCards.getRandomPiCards(); //获得卡牌函数
 
             if (rewardCards != null && !rewardCards.isEmpty()) {
                 AbstractDungeon.cardRewardScreen.open(rewardCards, null, TEXT[0]);

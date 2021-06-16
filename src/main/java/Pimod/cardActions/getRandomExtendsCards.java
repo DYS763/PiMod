@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class getRandomPiCards {
+public class getRandomExtendsCards {
 
     public static float PiRareChance;
     public static CardGroup PiCardPool;
