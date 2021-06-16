@@ -139,5 +139,9 @@
   "NAME": "debuff测试",
   "DESCRIPTION": "133,rare",
   "UPGRADE_DESCRIPTION": " 1"
+},"quede": {
+  "NAME": "debuff翻倍测试",
+  "DESCRIPTION": "133,rare",
+  "UPGRADE_DESCRIPTION": " 1"
 }
 }

@@ -3,6 +3,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRng;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.rollRarity;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +14,7 @@ import java.util.Iterator;
 public class getRandomExtendsCards {
 
     public static float PiRareChance;
-    public static CardGroup PiCardPool;
+    public static CardGroup ExtendsCardPool;
     public static int cardBlizzRandomizer;
     public static int cardBlizzStartOffset;
     protected static final Logger logger = LogManager.getLogger(AbstractDungeon.class.getName());
@@ -26,9 +28,13 @@ public class getRandomExtendsCards {
         AbstractCard card;
 
         for(int i = 0; i < numCards; ++i) {
-            AbstractCard.CardRarity rarity = rollRareOrUncommon(i);  //卡牌稀有度函数很重要，需要自己后期定义
+            AbstractCard.CardRarity rarity = rollRarity();  //卡牌稀有度函数很重要，可以自己后期定义
             card = null;
             switch(rarity) {
+                case COMMON:
+                    card = getPiCardFromPool(rarity);
+                    logger.info("COMMON");
+                    break;
                 case UNCOMMON:
                     card = getPiCardFromPool(rarity);
                     logger.info("UNCOMMON");
@@ -73,20 +79,20 @@ public class getRandomExtendsCards {
         AbstractCard retVal;
         switch(rarity) {
             case RARE:
-                retVal = PiCardPool.getRandomCard(true, rarity);
+                retVal = ExtendsCardPool.getRandomCard(true, rarity);
                 if (retVal != null) {
                     return retVal;
                 }
                 logger.info("RARE");
             case UNCOMMON:
-                retVal = PiCardPool.getRandomCard(true, rarity);
+                retVal = ExtendsCardPool.getRandomCard(true, rarity);
                 if (retVal != null) {
                     return retVal;
                 }
                 logger.info("UNCOMMON");
 
             case COMMON:
-                retVal = PiCardPool.getRandomCard(true, rarity);
+                retVal = ExtendsCardPool.getRandomCard(true, rarity);
                 if (retVal != null) {
                     return retVal;
                 }
@@ -99,7 +105,7 @@ public class getRandomExtendsCards {
 
 
     static {
-        PiCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+        ExtendsCardPool = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
     }
 
 }

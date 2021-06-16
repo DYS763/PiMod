@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Iterator;
 import java.util.Map;
 
-import static Pimod.cardActions.getRandomExtendsCards.PiCardPool;
+import static Pimod.cardActions.getRandomExtendsCards.ExtendsCardPool;
 
 public class addPiCards {
     //添加抽卡卡池方法，引用方法时要注意方法的位置
@@ -22,10 +22,10 @@ public class addPiCards {
             Map.Entry<String, AbstractCard> c = (Map.Entry)var2.next();
             AbstractCard card = (AbstractCard)c.getValue();
             if (card.color == AbstractCardEnum.PI_DERIVATIONS && card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL && card.type != AbstractCard.CardType.STATUS) {
-                PiCardPool.addToTop(card);
+                ExtendsCardPool.addToTop(card);
             }
         }
 
-        logger.info("COLORLESS: " + PiCardPool.size());
+        logger.info("COLORLESS: " + ExtendsCardPool.size());
     }
 }
