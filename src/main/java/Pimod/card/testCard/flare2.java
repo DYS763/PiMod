@@ -1,7 +1,6 @@
-package Pimod.card;
+package Pimod.card.testCard;
 
 import Pimod.patches.AbstractCardEnum;
-import Pimod.tutorial.Tutorial;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

@@ -1,4 +1,4 @@
-package Pimod.card;
+package Pimod.card.PiBaseCard;
 
 
 import Pimod.patches.AbstractCardEnum;

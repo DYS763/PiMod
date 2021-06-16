@@ -1,4 +1,4 @@
-package Pimod.card;
+package Pimod.card.testCard;
 
 import Pimod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import basemod.abstracts.CustomCard;
 
-public class extendstest1 extends CustomCard {
-    public static final String ID = "extendstest1";
+public class extendstest111 extends CustomCard {
+    public static final String ID = "extendstest111";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
@@ -26,10 +26,10 @@ public class extendstest1 extends CustomCard {
     private static final int VULNERABLE_AMT = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
 
-    public extendstest1() {
+    public extendstest111() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.PI_DERIVATIONS,
-                CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY);
+                CardRarity.RARE, AbstractCard.CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
         this.damage=this.baseDamage = ATTACK_DMG;
 
@@ -45,7 +45,7 @@ public class extendstest1 extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new extendstest1();
+        return new extendstest111();
     }
 
     @Override

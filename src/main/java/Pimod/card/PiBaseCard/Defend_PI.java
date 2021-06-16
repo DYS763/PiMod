@@ -1,4 +1,4 @@
-package Pimod.card;
+package Pimod.card.PiBaseCard;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
@@ -9,13 +9,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import Pimod.actions.meidelao;
 
 
-public class meide extends CustomCard{
+public class Defend_PI extends CustomCard{
 
-    public static final String ID = "meide";
-    public static final String IMG_PATH = "img/cards/Defend_MRS.png";
+    public static final String ID = "Defend_PI";
+    public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
@@ -23,19 +22,18 @@ public class meide extends CustomCard{
     private static final int BLOCK_AMT = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
-    public meide() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
+    public Defend_PI() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
         this.baseBlock = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new meidelao(m));
-
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
     }
 
     public AbstractCard makeCopy() {
-        return new meide();
+        return new Defend_PI();
     }
 
     public boolean isDefend() {
@@ -45,13 +43,13 @@ public class meide extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeBlock(3);
         }
 
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("meide");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("Defend_PI");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }
