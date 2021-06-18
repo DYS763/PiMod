@@ -41,7 +41,7 @@ public class Furou extends CustomCard{//“extends CustomCard” 继承basemod�
 	
 	//注：以上声明的五个变量并非强制需要。仅出于代码的美观考虑而写。
 	public Furou() {
-		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
+		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.SELF);
 		this.baseMagicNumber = 5;
 		this.magicNumber = this.baseMagicNumber;
 		this.tags.add(CardTags.HEALING);

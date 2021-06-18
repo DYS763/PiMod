@@ -95,5 +95,49 @@
     "NAME": "美德老",
     "DESCRIPTION": "清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。",
     "UPGRADE_DESCRIPTION": " 清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。"
-  }
+  },
+  "extendstest1": {
+    "NAME": "衍生牌测试",
+    "DESCRIPTION": "1,uncommon",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "extendstest2": {
+    "NAME": "衍生牌测试",
+    "DESCRIPTION": "2，uncommon",
+    "UPGRADE_DESCRIPTION": " 2"
+  },
+  "extendstest3": {
+    "NAME": "衍生牌测试",
+    "DESCRIPTION": "3,uncommon",
+    "UPGRADE_DESCRIPTION": " 3"
+  },
+  "extendstest11": {
+    "NAME": "衍生牌测试",
+    "DESCRIPTION": "11,common",
+    "UPGRADE_DESCRIPTION": " 1"
+  },  "extendstest12": {
+  "NAME": "衍生牌测试",
+  "DESCRIPTION": "12,common",
+  "UPGRADE_DESCRIPTION": " 1"
+},  "extendstest13": {
+  "NAME": "衍生牌测试",
+  "DESCRIPTION": "13,common",
+  "UPGRADE_DESCRIPTION": " 1"
+},  "extendstest111": {
+  "NAME": "衍生牌测试",
+  "DESCRIPTION": "111,rare",
+  "UPGRADE_DESCRIPTION": " 1"
+},  "extendstest122": {
+  "NAME": "衍生牌测试",
+  "DESCRIPTION": "122,rare",
+  "UPGRADE_DESCRIPTION": " 1"
+},  "extendstest133": {
+  "NAME": "衍生牌测试",
+  "DESCRIPTION": "133,rare",
+  "UPGRADE_DESCRIPTION": " 1"
+},  "diaoling": {
+  "NAME": "debuff测试",
+  "DESCRIPTION": "133,rare",
+  "UPGRADE_DESCRIPTION": " 1"
+}
 }

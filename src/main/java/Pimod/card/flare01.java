@@ -46,7 +46,7 @@ public class flare01 extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new flare();
+        return new flare01();
     }
 
     @Override

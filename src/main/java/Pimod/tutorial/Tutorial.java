@@ -1,6 +1,8 @@
 package Pimod.tutorial;
 import Pimod.card.*;
+import Pimod.cardActions.addPiCards;
 import Pimod.characters.A_PI;
+import Pimod.campfire.*;
 import Pimod.patches.AbstractCardEnum;
 import Pimod.patches.PIClassEnum;
 import Pimod.relic.goldenApple;
@@ -10,6 +12,7 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -20,24 +23,31 @@ import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import com.megacrit.cardcrawl.ui.campfire.DigOption;
+import org.apache.commons.codec.Charsets;
+import static Pimod.cardActions.getRandomPiCards.PiCardPool;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Iterator;
+import Pimod.powers.withered;
 
 
 @SpireInitializer
-public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubscriber, EditStringsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber ,EditKeywordsSubscriber{
+public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubscriber, EditStringsSubscriber,
+        EditRelicsSubscriber, EditCharactersSubscriber ,EditKeywordsSubscriber,PostInitializeSubscriber
+        ,OnPowersModifiedSubscriber{
     public static final Logger logger = LogManager.getLogger(Tutorial.class.getName());
     public static final Color PICOLOR = CardHelper.getColor(236,102,172);
+    public static final Color PIEXTENDS = CardHelper.getColor(0,0,0);
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList();
+    public static Texture change;
 
     public Tutorial() {
         BaseMod.subscribe(this);
         logger.info("creating the color:picolor");
         BaseMod.addColor(AbstractCardEnum.PI_COLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
-        BaseMod.addColor(AbstractCardEnum.PI_DERIVATIONS,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
+        BaseMod.addColor(AbstractCardEnum.PI_DERIVATIONS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
     }
 
     public static void initialize() {
@@ -95,13 +105,27 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new Chengzhineifire());
         this.cardsToAdd.add(new Niunai());
         this.cardsToAdd.add(new meide());
+        this.cardsToAdd.add(new extendstest1());
+        this.cardsToAdd.add(new extendstest2());
+        this.cardsToAdd.add(new extendstest3());
+        this.cardsToAdd.add(new extendstest11());
+        this.cardsToAdd.add(new extendstest12());
+        this.cardsToAdd.add(new extendstest13());
+        this.cardsToAdd.add(new extendstest111());
+        this.cardsToAdd.add(new extendstest122());
+        this.cardsToAdd.add(new extendstest133());
+        this.cardsToAdd.add(new diaoling());
+
     }
 
     @Override
     public void receivePostDungeonInitialize() {
         logger.info(">>>初始化开始<<<");
-        //给人物添加遗物
+        new addPiCards();
         logger.info(">>>初始化完成<<<");
+    }
+    public void receivePostInitialize() {
+        change = new Texture(Gdx.files.internal("img/UI/campfire/ShopOnline.png"));
     }
     @Override
     public void receiveEditStrings() {
@@ -110,12 +134,14 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         String power;
         String potion;
         String event;
+        String UI;
         logger.info("lang == zhs");
         card = "localization/Pimod_cards.json";
         relic = "localization/Pimod_relics.json";
         power = "localization/Pimod_powers.json";
         potion = "localization/Pimod_potions.json";
         event = "localization/Pimod_events.json";
+        UI = "localization/Pimod_ui.json";
         String relicStrings = Gdx.files.internal(relic).readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
         String cardStrings = Gdx.files.internal(card).readString(String.valueOf(StandardCharsets.UTF_8));
@@ -126,12 +152,18 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         BaseMod.loadCustomStrings(PotionStrings.class, potionStrings);
         String eventStrings = Gdx.files.internal(event).readString(String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(EventStrings.class, eventStrings);
+        String UIStrings=Gdx.files.internal(UI).readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(UIStrings.class, UIStrings);
         logger.info("done editing strings");
         receiveJson("卡牌", "Pimod_cards.json", CardStrings.class);
+        receiveJson("力量", "Pimod_powers.json", PowerStrings.class);
     }
     private void receiveJson(String typeInfo, String jsonFileName, Class<?> className) {
         String cardStrings = Gdx.files.internal("localization/" + jsonFileName).readString("UTF-8");
         BaseMod.loadCustomStrings(className, cardStrings);
+    }
+    public void receivePowersModified() {
+
     }
 
     private static String loadJson(String jsonPath) {
