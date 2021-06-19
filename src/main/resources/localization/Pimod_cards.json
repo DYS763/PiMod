@@ -143,5 +143,10 @@
   "NAME": "debuff翻倍测试",
   "DESCRIPTION": "133,rare",
   "UPGRADE_DESCRIPTION": " 1"
-}
+},
+  "testForOrb": {
+    "NAME": "充能球测试",
+    "DESCRIPTION": "133,rare",
+    "UPGRADE_DESCRIPTION": " 1"
+  }
 }

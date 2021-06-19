@@ -74,7 +74,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
     public void receiveEditCharacters() {
         logger.info("begin editing characters");
         logger.info("add " + PIClassEnum.A_PI.toString());
-        BaseMod.addCharacter(new A_PI("A_PI"), "img/charSelect/testButton.png", "img/charSelect/a_pi.jpg", PIClassEnum.A_PI);
+        BaseMod.addCharacter(new A_PI("A_PI"), "img/charSelect/testButton.png", "img/charSelect/a_pi1.jpg", PIClassEnum.A_PI);
         logger.info("done editing characters");
     }
     private void loadCardsToAdd() {
@@ -109,6 +109,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new extendstest133());
         this.cardsToAdd.add(new diaoling());
         this.cardsToAdd.add(new quede());
+        this.cardsToAdd.add(new testForOrb());
 
     }
 
