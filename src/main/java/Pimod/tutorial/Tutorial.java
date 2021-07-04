@@ -1,5 +1,6 @@
 package Pimod.tutorial;
 import Pimod.card.*;
+import Pimod.card.MineralCard.*;
 import Pimod.card.PiBaseCard.Defend_PI;
 import Pimod.card.PiBaseCard.Strike_PI;
 import Pimod.card.testCard.*;
@@ -110,13 +111,23 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new diaoling());
         this.cardsToAdd.add(new quede());
         this.cardsToAdd.add(new testForOrb());
+        this.cardsToAdd.add(new coal());
+        this.cardsToAdd.add(new diamond());
+        this.cardsToAdd.add(new glowStone());
+        this.cardsToAdd.add(new emerald());
+        this.cardsToAdd.add(new gold());
+        this.cardsToAdd.add(new obsidian());
+        this.cardsToAdd.add(new quartz());
+        this.cardsToAdd.add(new redStone());
+        this.cardsToAdd.add(new steel());
+        this.cardsToAdd.add(new stone());
 
     }
 
     @Override
     public void receivePostDungeonInitialize() {
         logger.info(">>>初始化开始<<<");
-        new addPiCards();
+
         logger.info(">>>初始化完成<<<");
     }
     public void receivePostInitialize() {

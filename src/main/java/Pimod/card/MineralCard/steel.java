@@ -1,0 +1,55 @@
+package Pimod.card.MineralCard;
+
+import Pimod.patches.AbstractCardEnum;
+import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+/*已完成
+ * */
+public class steel extends CustomCard{
+
+    public static final String ID = "steel";
+    public static final String IMG_PATH = "cards/fangyu.png";
+    private static final CardStrings cardStrings;
+    public static final String NAME;
+    public static final String DESCRIPTION;
+    private static final int COST = 0;
+
+    public steel() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.SELF);
+        this.baseBlock = 4;
+        this.exhaust = true;
+    }
+
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+    }
+
+    public AbstractCard makeCopy() {
+        return new steel();
+    }
+
+    public boolean isDefend() {
+        return true;
+    }
+
+    public void upgrade() {
+        if (!this.upgraded) {
+            this.upgradeName();
+            this.upgradeBlock(2);
+        }
+
+    }
+
+    static {
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("steel");
+        NAME = cardStrings.NAME;
+        DESCRIPTION = cardStrings.DESCRIPTION;
+    }
+}

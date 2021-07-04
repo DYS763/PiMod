@@ -26,7 +26,7 @@ public class getRandomExtendsCards {
         ArrayList<AbstractCard> retVal = new ArrayList();
         int numCards = 3;
         AbstractCard card;
-
+        new addPiCards();
         for(int i = 0; i < numCards; ++i) {
             AbstractCard.CardRarity rarity = rollRarity();  //卡牌稀有度函数很重要，可以自己后期定义
             card = null;

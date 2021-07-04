@@ -148,5 +148,56 @@
     "NAME": "充能球测试",
     "DESCRIPTION": "133,rare",
     "UPGRADE_DESCRIPTION": " 1"
+  },
+  "coal": {
+    "NAME": "煤炭",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "diamond": {
+    "NAME": "钻石",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "emerald": {
+    "NAME": "绿宝石",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "glowStone": {
+    "NAME": "萤石",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "gold": {
+    "NAME": "金",
+    "DESCRIPTION": "退出游戏",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "obsidian": {
+    "NAME": "黑曜石",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "quartz": {
+    "NAME": "石英",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "redStone": {
+    "NAME": "红石",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "steel": {
+    "NAME": "铁",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "stone": {
+    "NAME": "石头",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
   }
+
 }
