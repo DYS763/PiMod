@@ -1,10 +1,9 @@
 package Pimod.tutorial;
 import Pimod.card.*;
-import Pimod.card.MineralCard.*;
+import Pimod.card.MineralCards.*;
 import Pimod.card.PiBaseCard.Defend_PI;
 import Pimod.card.PiBaseCard.Strike_PI;
 import Pimod.card.testCard.*;
-import Pimod.cardActions.addPiCards;
 import Pimod.characters.A_PI;
 import Pimod.patches.AbstractCardEnum;
 import Pimod.patches.PIClassEnum;

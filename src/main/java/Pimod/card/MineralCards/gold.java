@@ -1,38 +1,38 @@
-package Pimod.card.MineralCard;
+package Pimod.card.MineralCards;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-/*已完成
+/*已完成  金
  * */
-public class steel extends CustomCard{
+public class gold extends CustomCard{
 
-    public static final String ID = "steel";
+    public static final String ID = "gold";
     public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 0;
-
-    public steel() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.SELF);
-        this.baseBlock = 4;
+    private static int baseGold = 5;
+    private static final boolean isMine = true;
+    public gold() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseBlock = 5;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        this.addToBot(new GainGoldAction(baseGold));
     }
 
     public AbstractCard makeCopy() {
-        return new steel();
+        return new gold();
     }
 
     public boolean isDefend() {
@@ -42,13 +42,13 @@ public class steel extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(2);
+            baseGold +=5;
         }
 
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("steel");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("gold");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

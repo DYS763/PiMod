@@ -1,36 +1,37 @@
-package Pimod.card.MineralCard;
+package Pimod.card.MineralCards;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+/*已完成 石英
+ * */
 
-public class obsidian extends CustomCard{
+public class quartz extends CustomCard{
 
-    public static final String ID = "obsidian";
+    public static final String ID = "quartz";
     public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 0;
-
-    public obsidian() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.SELF);
-        this.baseBlock = 5;
+    private static final boolean isMine = true;
+    public quartz() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.SELF);
+        this.baseDraw = 1;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        this.addToBot(new DrawCardAction(p,baseDraw));
     }
 
     public AbstractCard makeCopy() {
-        return new obsidian();
+        return new quartz();
     }
 
     public boolean isDefend() {
@@ -40,13 +41,13 @@ public class obsidian extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(3);
+            this.baseDraw++;
         }
 
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("obsidian");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("quartz");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

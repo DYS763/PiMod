@@ -1,9 +1,10 @@
 package Pimod.card.PiBaseCard;
 
-
+import Pimod.cardActions.returnRandomMineralCard;
 import Pimod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import static Pimod.cardActions.returnRandomMineralCard.getRandomMineralCard;
 
 public class Strike_PI extends AbstractCard {
 
@@ -28,9 +31,11 @@ public class Strike_PI extends AbstractCard {
         //this.tags.add(CardTags.STARTER_STRIKE);
         //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
         this.baseDamage = 6;
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractCard card;
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
