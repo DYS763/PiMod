@@ -18,8 +18,6 @@ public class obsidian extends CustomCard{
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 0;
-    private static final int BLOCK_AMT = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public obsidian() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.SELF);
