@@ -1,38 +1,39 @@
-package Pimod.card.MineralCards;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
-/*已完成  钻石
- * */
-public class diamond extends CustomCard{
+/*已完成
+* */
+public class redStone extends CustomCard{
 
-    public static final String ID = "diamond";
+    public static final String ID = "redStone";
     public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 0;
-    private static int powerAmt = 3;
+    private static int energyAmt = 1;
     private static final boolean isMine = true;
-    public diamond() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.SELF);
+
+    public redStone() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseBlock = 5;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p,p,new PlatedArmorPower(p,powerAmt),powerAmt));
+        this.addToBot(new GainEnergyAction(energyAmt));
     }
 
     public AbstractCard makeCopy() {
-        return new diamond();
+        return new redStone();
     }
 
     public boolean isDefend() {
@@ -42,13 +43,13 @@ public class diamond extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            powerAmt+=2;
+            energyAmt++;
         }
 
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("diamond");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("redStone");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

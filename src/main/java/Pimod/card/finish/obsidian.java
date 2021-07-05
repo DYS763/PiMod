@@ -1,39 +1,37 @@
-package Pimod.card.MineralCards;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-/*已完成
-* */
-public class redStone extends CustomCard{
+public class obsidian extends CustomCard{
 
-    public static final String ID = "redStone";
+    public static final String ID = "obsidian";
     public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 0;
-    private static int energyAmt = 1;
     private static final boolean isMine = true;
 
-    public redStone() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
+    public obsidian() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.SELF);
         this.baseBlock = 5;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainEnergyAction(energyAmt));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
     }
 
     public AbstractCard makeCopy() {
-        return new redStone();
+        return new obsidian();
     }
 
     public boolean isDefend() {
@@ -43,13 +41,13 @@ public class redStone extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            energyAmt++;
+            this.upgradeBlock(3);
         }
 
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("redStone");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("obsidian");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

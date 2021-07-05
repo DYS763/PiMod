@@ -1,23 +1,19 @@
-package Pimod.card.PiBaseCard;
+package Pimod.card.working;
 
-import Pimod.cardActions.returnRandomMineralCard;
+import Pimod.card.already.Strike_PI;
 import Pimod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static Pimod.cardActions.returnRandomMineralCard.getRandomMineralCard;
+public class reaper extends AbstractCard {
 
-public class Strike_PI extends AbstractCard {
-
-    public static final String ID = "Strike_PI";
+    public static final String ID = "reaper";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
@@ -26,17 +22,18 @@ public class Strike_PI extends AbstractCard {
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    public Strike_PI() {
-        super("Strike_PI", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
+    public reaper() {
+        super("reaper", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
         //this.tags.add(CardTags.STARTER_STRIKE);
         //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
-        this.baseDamage = 6;
+        this.baseDamage = 10;
 
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard card;
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        
     }
 
     public AbstractCard makeCopy() {
@@ -52,12 +49,12 @@ public class Strike_PI extends AbstractCard {
             this.upgradeName();
             this.upgradeDamage(3);
         }
-
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("Strike_PI");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("reaper");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }
+

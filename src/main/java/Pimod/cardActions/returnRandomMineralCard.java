@@ -1,5 +1,5 @@
 package Pimod.cardActions;
-import Pimod.card.MineralCards.*;
+import Pimod.card.finish.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import org.apache.logging.log4j.LogManager;

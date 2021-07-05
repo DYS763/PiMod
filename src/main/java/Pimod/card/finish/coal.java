@@ -1,4 +1,4 @@
-package Pimod.card.MineralCards;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;

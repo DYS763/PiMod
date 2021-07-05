@@ -1,26 +1,22 @@
-package Pimod.card;
+package Pimod.card.already;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class Yinggangguangxian extends CustomCard{//“extends CustomCard” 继承basemod的CustomCard类，可以理解为继承了卡牌所需要的几个基本组成部件。
+public class Youjiguangxian extends CustomCard{//“extends CustomCard” 继承basemod的CustomCard类，可以理解为继承了卡牌所需要的几个基本组成部件。
 
-	public static final String ID = "Yinggangguangxian";
-	public static final String IMG_PATH = "cards/yinggangguangxian.png";
+	public static final String ID = "Youjiguangxian";
+	public static final String IMG_PATH = "cards/youjiguangxian.png";
 	private static final CardStrings cardStrings;
 	public static final String NAME;
 	public static final String DESCRIPTION;
@@ -40,8 +36,8 @@ public class Yinggangguangxian extends CustomCard{//“extends CustomCard” 继
 	private static final int COST = 1;//卡牌的费用。
 	
 	//注：以上声明的五个变量并非强制需要。仅出于代码的美观考虑而写。
-	public Yinggangguangxian() {
-		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
+	public Youjiguangxian() {
+		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
 		this.baseDamage = 7;
 		this.baseMagicNumber = 1;
 		this.magicNumber = this.baseMagicNumber;
@@ -49,11 +45,11 @@ public class Yinggangguangxian extends CustomCard{//“extends CustomCard” 继
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.LIGHTNING));
-		this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+		this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
 	}
 
 	public AbstractCard makeCopy() {
-		return new Yinggangguangxian();
+		return new Youjiguangxian();
 	}
 	public void upgrade() {
 		if (!this.upgraded) {
@@ -64,7 +60,7 @@ public class Yinggangguangxian extends CustomCard{//“extends CustomCard” 继
 	}
 
 	static {
-		cardStrings = CardCrawlGame.languagePack.getCardStrings("Yinggangguangxian");
+		cardStrings = CardCrawlGame.languagePack.getCardStrings("Youjiguangxian");
 		NAME = cardStrings.NAME;
 		DESCRIPTION = cardStrings.DESCRIPTION;
 	}

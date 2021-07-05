@@ -1,8 +1,6 @@
 package Pimod.tutorial;
-import Pimod.card.*;
-import Pimod.card.MineralCards.*;
-import Pimod.card.PiBaseCard.Defend_PI;
-import Pimod.card.PiBaseCard.Strike_PI;
+import Pimod.card.already.*;
+import Pimod.card.finish.*;
 import Pimod.card.testCard.*;
 import Pimod.characters.A_PI;
 import Pimod.patches.AbstractCardEnum;
@@ -130,7 +128,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         logger.info(">>>初始化完成<<<");
     }
     public void receivePostInitialize() {
-        change = new Texture(Gdx.files.internal("img/UI/campfire/ShopOnline.png"));
+//        change = new Texture(Gdx.files.internal("img/UI/campfire/ShopOnline.png"));
     }
     @Override
     public void receiveEditStrings() {

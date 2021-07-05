@@ -1,24 +1,19 @@
-package Pimod.card;
+package Pimod.card.already;
+
 import Pimod.patches.AbstractCardEnum;
-import Pimod.powers.beatBackPower;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import java.util.Iterator;
 
 
-public class iaido extends CustomCard{
+public class Defend_PI extends CustomCard{
 
-    public static final String ID = "iaido";
+    public static final String ID = "Defend_PI";
     public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
@@ -27,31 +22,18 @@ public class iaido extends CustomCard{
     private static final int BLOCK_AMT = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
-    public iaido() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
+    public Defend_PI() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
         this.baseBlock = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, p, this.block));
-        boolean powerExists = false;
-        Iterator var4 = p.powers.iterator();
-        while(var4.hasNext()) {
-            AbstractPower pow = (AbstractPower)var4.next();
-            if (pow.ID.equals("beatBack")) {
-                powerExists = true;
-                break;
-            }
-        }
-        if (!powerExists) {
-            this.addToBot(new ApplyPowerAction(p, p, new beatBackPower(p)));
-        }
-        this.addToBot(new PressEndTurnButtonAction());
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
     }
 
     public AbstractCard makeCopy() {
-        return new Pimod.card.PiBaseCard.Defend_PI();
+        return new Defend_PI();
     }
 
     public boolean isDefend() {
@@ -67,7 +49,7 @@ public class iaido extends CustomCard{
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("iaido");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("Defend_PI");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

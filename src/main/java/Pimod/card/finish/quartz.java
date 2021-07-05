@@ -1,4 +1,4 @@
-package Pimod.card.MineralCards;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
@@ -8,21 +8,21 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-/*已完成 萤石
+/*已完成 石英
  * */
-public class glowStone extends CustomCard{
 
-    public static final String ID = "glowStone";
+public class quartz extends CustomCard{
+
+    public static final String ID = "quartz";
     public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 0;
     private static final boolean isMine = true;
-    public glowStone() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseDraw = 2;
+    public quartz() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.SELF);
+        this.baseDraw = 1;
         this.exhaust = true;
     }
 
@@ -31,7 +31,7 @@ public class glowStone extends CustomCard{
     }
 
     public AbstractCard makeCopy() {
-        return new glowStone();
+        return new quartz();
     }
 
     public boolean isDefend() {
@@ -47,7 +47,7 @@ public class glowStone extends CustomCard{
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("glowStone");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("quartz");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }
