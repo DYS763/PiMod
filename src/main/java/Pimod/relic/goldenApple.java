@@ -1,10 +1,14 @@
 package Pimod.relic;
 
 import Pimod.PimodConfig.PimodConfig;
+import Pimod.campfire.campfireOption.changeOption;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
 
 public class goldenApple extends CustomRelic {
     /**
@@ -25,7 +29,9 @@ public class goldenApple extends CustomRelic {
         //使用内置图标就不需要导入了 想自定义可以抄其他的mod或者看教程
         super(ID, "crown.png", RelicTier.STARTER, LandingSound.CLINK);
     }
-
+    public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
+        options.add(new changeOption(true));
+    }
     /**
      * 在战斗开始时触发
      */

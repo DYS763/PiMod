@@ -1,36 +1,29 @@
 package Pimod.tutorial;
 import Pimod.card.*;
-import Pimod.cardActions.addPiCards;
+import Pimod.card.MineralCards.*;
+import Pimod.card.PiBaseCard.Defend_PI;
+import Pimod.card.PiBaseCard.Strike_PI;
+import Pimod.card.testCard.*;
 import Pimod.characters.A_PI;
-import Pimod.campfire.*;
 import Pimod.patches.AbstractCardEnum;
 import Pimod.patches.PIClassEnum;
 import Pimod.relic.goldenApple;
 import basemod.BaseMod;
-import basemod.abstracts.CustomRelic;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-import com.megacrit.cardcrawl.ui.campfire.DigOption;
-import org.apache.commons.codec.Charsets;
-import static Pimod.cardActions.getRandomPiCards.PiCardPool;
+
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Iterator;
-import Pimod.powers.withered;
 
 
 @SpireInitializer
@@ -81,7 +74,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
     public void receiveEditCharacters() {
         logger.info("begin editing characters");
         logger.info("add " + PIClassEnum.A_PI.toString());
-        BaseMod.addCharacter(new A_PI("A_PI"), "img/charSelect/testButton.png", "img/charSelect/a_pi.jpg", PIClassEnum.A_PI);
+        BaseMod.addCharacter(new A_PI("A_PI"), "img/charSelect/testButton.png", "img/charSelect/a_pi1.jpg", PIClassEnum.A_PI);
         logger.info("done editing characters");
     }
     private void loadCardsToAdd() {
@@ -115,13 +108,25 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new extendstest122());
         this.cardsToAdd.add(new extendstest133());
         this.cardsToAdd.add(new diaoling());
+        this.cardsToAdd.add(new quede());
+        this.cardsToAdd.add(new testForOrb());
+        this.cardsToAdd.add(new coal());
+        this.cardsToAdd.add(new diamond());
+        this.cardsToAdd.add(new glowStone());
+        this.cardsToAdd.add(new emerald());
+        this.cardsToAdd.add(new gold());
+        this.cardsToAdd.add(new obsidian());
+        this.cardsToAdd.add(new quartz());
+        this.cardsToAdd.add(new redStone());
+        this.cardsToAdd.add(new steel());
+        this.cardsToAdd.add(new stone());
 
     }
 
     @Override
     public void receivePostDungeonInitialize() {
         logger.info(">>>初始化开始<<<");
-        new addPiCards();
+
         logger.info(">>>初始化完成<<<");
     }
     public void receivePostInitialize() {
