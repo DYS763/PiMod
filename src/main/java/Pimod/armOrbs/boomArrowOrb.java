@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect.OrbFlareColor;
 /*爆炸箭
 在你的回合开始时对所有敌人造成6点伤害，受到2点伤害。
-激活每写
+回收未完成
 * */
 public class boomArrowOrb extends AbstractOrb {
     public static final String ORB_ID = "testForOrb";

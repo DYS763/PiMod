@@ -10,8 +10,39 @@ import java.util.Random;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.rollRarity;
 
 public abstract class returnRandomMineralCard {
-    public static float PiRareChance;
     protected static final Logger logger = LogManager.getLogger(AbstractDungeon.class.getName());
+
+    public static AbstractCard getCommonMineralCard(){
+        Random random = new Random();
+        switch ((random.nextInt(3))){
+            case 0: return new stone();
+            case 1: return new steel();
+            case 2: return new quartz();
+        }
+        return new stone();
+    }
+
+    public static AbstractCard getUncommonMineralCard(){
+        Random random = new Random();
+        switch (random.nextInt(4)){
+            case 0: return new coal();
+            case 1: return new gold();
+            case 2: return new redStone();
+            case 3: return new glowStone();
+        }
+        return new stone();
+    }
+    public static AbstractCard getRareMineralCard(){
+        Random random = new Random();
+        switch (random.nextInt(3)){
+            case 0: return new diamond();
+            case 1: return new obsidian();
+            case 2: return new emerald();
+        }
+        return new stone();
+    }
+
+
     public static AbstractCard getRandomMineralCard(){
         Random random = new Random();
         AbstractCard.CardRarity rarity = rollRarity();   //随机稀有度

@@ -1,6 +1,6 @@
 package Pimod.card.weaponCard;
 
-import Pimod.armOrbs.stickOrb;
+import Pimod.armOrbs.batonOrb;
 import Pimod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import basemod.abstracts.CustomCard;
 
-public class stick extends CustomCard {
-    public static final String ID = "stick";
+public class baton extends CustomCard {
+    public static final String ID = "baton";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -19,7 +19,7 @@ public class stick extends CustomCard {
     private static final int COST = 2;
     private static final int VULNERABLE_AMT = 1;
 
-    public stick() {
+    public baton() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.PI_COLOR,
                 CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
@@ -29,12 +29,12 @@ public class stick extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChannelAction(new stickOrb()));
+        this.addToBot(new ChannelAction(new batonOrb()));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new stick();
+        return new baton();
     }
 
     @Override
