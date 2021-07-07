@@ -23,7 +23,7 @@ public class coal extends CustomCard{
     private static int energyAmt = 1;
     private static final boolean isMine = true;
     public coal() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = 5;
         this.exhaust = true;
     }

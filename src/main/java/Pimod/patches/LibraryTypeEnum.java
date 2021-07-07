@@ -6,6 +6,8 @@ public class LibraryTypeEnum {
     public static LibraryType PI_COLOR;
     @SpireEnum
     public static LibraryType PI_DERIVATIONS;
+    @SpireEnum
+    public static LibraryType PI_MINERAL;
 
     public LibraryTypeEnum() {
     }

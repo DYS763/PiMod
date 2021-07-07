@@ -37,6 +37,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
     public static final Logger logger = LogManager.getLogger(Tutorial.class.getName());
     public static final Color PICOLOR = CardHelper.getColor(236,102,172);
     public static final Color PIEXTENDS = CardHelper.getColor(0,0,0);
+    public static final Color PIMINERAL = CardHelper.getColor(0,0,0);
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList();
     public static Texture change;
 
@@ -45,6 +46,8 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         logger.info("creating the color:picolor");
         BaseMod.addColor(AbstractCardEnum.PI_COLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,PICOLOR,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
         BaseMod.addColor(AbstractCardEnum.PI_DERIVATIONS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,PIEXTENDS,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
+        BaseMod.addColor(AbstractCardEnum.PI_MINERAL,PIMINERAL,PIMINERAL,PIMINERAL,PIMINERAL,PIMINERAL,PIMINERAL,PIMINERAL,"img/512/bg_attack_MRS_s.png", "img/512/bg_skill_MRS_s.png", "img/512/bg_power_MRS_s.png", "img/512/cardOrb.png", "img/1024/bg_attack_MRS.png", "img/1024/bg_skill_MRS.png", "img/1024/bg_power_MRS.png", "img/1024/cardOrb.png", "img/UI/energyOrb.png");
+
     }
 
     public static void initialize() {

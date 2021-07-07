@@ -22,7 +22,7 @@ public class gold extends CustomCard{
     private static int baseGold = 5;
     private static final boolean isMine = true;
     public gold() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseBlock = 5;
         this.exhaust = true;
     }

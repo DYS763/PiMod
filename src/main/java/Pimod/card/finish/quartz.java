@@ -21,7 +21,7 @@ public class quartz extends CustomCard{
     private static final int COST = 0;
     private static final boolean isMine = true;
     public quartz() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.COMMON, CardTarget.SELF);
         this.baseDraw = 1;
         this.exhaust = true;
     }

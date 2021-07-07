@@ -21,7 +21,7 @@ public class glowStone extends CustomCard{
     private static final int COST = 0;
     private static final boolean isMine = true;
     public glowStone() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseDraw = 2;
         this.exhaust = true;
     }
