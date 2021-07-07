@@ -1,4 +1,4 @@
-package Pimod.card.testCard;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
 import Pimod.powers.withered;

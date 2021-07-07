@@ -5,5 +5,12 @@
       "达到8层时失去50生命",
       ""
     ]
+  },
+  "beatBackPower": {
+    "NAME": "架势",
+    "DESCRIPTIONS": [
+      "反击",
+      ""
+    ]
   }
 }

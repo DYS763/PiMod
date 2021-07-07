@@ -37,7 +37,7 @@ public class reaper extends AbstractCard {
     }
 
     public AbstractCard makeCopy() {
-        return new Strike_PI();
+        return new reaper();
     }
 
     public boolean isStrike() {

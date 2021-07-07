@@ -1,5 +1,5 @@
 package Pimod.armOrbs;
-import Pimod.card.testCard.testForOrb;
+import Pimod.card.finish.baton;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -19,10 +19,10 @@ import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect.OrbFlareColor;
 /*接力棒 每回合开始获得能量
-回收卡未完成
+回收卡已完成
 * */
 public class batonOrb extends AbstractOrb {
-    public static final String ORB_ID = "testForOrb";
+    public static final String ORB_ID = "batonOrb";
     private static final OrbStrings orbString;
     public static final String[] DESC;
     private float vfxTimer = 1.0F;
@@ -32,7 +32,7 @@ public class batonOrb extends AbstractOrb {
     private static final float PI_4 = 12.566371F;
 
     public batonOrb() {
-        this.ID = "Plasma";
+        this.ID = "batonOrb";
         this.img = ImageMaster.ORB_PLASMA;
         this.name = orbString.NAME;
         this.baseEvokeAmount = 2;
@@ -50,7 +50,7 @@ public class batonOrb extends AbstractOrb {
     }
 
     public void onEvoke() {
-        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new testForOrb(),1));
+        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new baton(),1));
     }
 
     public void onStartOfTurn() {
@@ -101,7 +101,7 @@ public class batonOrb extends AbstractOrb {
     }
 
     static {
-        orbString = CardCrawlGame.languagePack.getOrbString("batonForOrb");
+        orbString = CardCrawlGame.languagePack.getOrbString("batonOrb");
         DESC = orbString.DESCRIPTION;
     }
 }

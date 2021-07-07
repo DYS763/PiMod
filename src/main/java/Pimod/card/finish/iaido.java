@@ -1,5 +1,4 @@
-package Pimod.card.working;
-import Pimod.card.already.Defend_PI;
+package Pimod.card.finish;
 import Pimod.patches.AbstractCardEnum;
 import Pimod.powers.beatBackPower;
 import basemod.abstracts.CustomCard;
@@ -14,7 +13,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.Iterator;
-
+/*居合
+*升级效已完成
+* */
 
 public class iaido extends CustomCard{
 
@@ -23,14 +24,11 @@ public class iaido extends CustomCard{
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = 1;
-    private static final int BLOCK_AMT = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int COST = 2;
 
     public iaido() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.tags.add(CardTags.STARTER_DEFEND);
-        this.baseBlock = 5;
+        this.baseBlock = 6;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -51,7 +49,7 @@ public class iaido extends CustomCard{
     }
 
     public AbstractCard makeCopy() {
-        return new Defend_PI();
+        return new iaido();
     }
 
     public boolean isDefend() {
@@ -61,7 +59,7 @@ public class iaido extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(3);
+            this.upgradeBlock(6);
         }
 
     }

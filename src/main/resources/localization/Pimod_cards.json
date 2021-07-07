@@ -198,6 +198,41 @@
     "NAME": "石头",
     "DESCRIPTION": "1",
     "UPGRADE_DESCRIPTION": " 1"
+  },
+  "getBaton": {
+    "NAME": "calling",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "baton": {
+    "NAME": "接力棒",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "fishboneTunnel": {
+    "NAME": "鱼骨矿道",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "iaido": {
+    "NAME": "居合",
+    "DESCRIPTION": "获得5点格挡，结束你的回合，架势。",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "reaper": {
+    "NAME": "居合",
+    "DESCRIPTION": "获得5点格挡，结束你的回合，架势。",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "remove": {
+    "NAME": "徒手上阵",
+    "DESCRIPTION": "移除你的武器，抽1张牌。",
+    "UPGRADE_DESCRIPTION": " 移除你的武器，抽2张牌"
+  },
+  "excavate": {
+    "NAME": "挖掘",
+    "DESCRIPTION": "抽一张牌，获得一张随机矿物",
+    "UPGRADE_DESCRIPTION": "抽一张牌，获得一张已升级的随机矿物"
   }
 
 }

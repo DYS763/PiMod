@@ -1,40 +1,46 @@
-package Pimod.card.testCard;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.defect.RemoveAllOrbsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import Pimod.actions.meidelao;
+/*徒手上阵 升级已完成 已测试 string已添加
+* */
 
+public class remove extends CustomCard{
 
-public class meide extends CustomCard{
-
-    public static final String ID = "meide";
-    public static final String IMG_PATH = "img/cards/Defend_MRS.png";
+    public static final String ID = "remove";
+    public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = 1;
-    private static final int BLOCK_AMT = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
+    private static final int COST = 0;
 
-    public meide() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
+    public remove() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
         this.baseBlock = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new meidelao(m));
-
+        if(AbstractDungeon.player.filledOrbCount()==1){
+            this.addToTop(new RemoveAllOrbsAction());
+            if(this.upgraded){
+                this.addToBot(new DrawCardAction(2));
+            }else {
+                this.addToBot(new DrawCardAction(1));
+            }
+        }
     }
 
     public AbstractCard makeCopy() {
-        return new meide();
+        return new remove();
     }
 
     public boolean isDefend() {
@@ -44,14 +50,14 @@ public class meide extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
         }
 
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("meide");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("remove");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }
+

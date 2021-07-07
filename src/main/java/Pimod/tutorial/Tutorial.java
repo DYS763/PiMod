@@ -2,6 +2,12 @@ package Pimod.tutorial;
 import Pimod.card.already.*;
 import Pimod.card.finish.*;
 import Pimod.card.testCard.*;
+import Pimod.card.finish.baton;
+import Pimod.card.finish.getBaton;
+import Pimod.card.finish.fishboneTunnel;
+import Pimod.card.finish.iaido;
+import Pimod.card.finish.remove;
+import Pimod.card.working.obsidian;
 import Pimod.characters.A_PI;
 import Pimod.patches.AbstractCardEnum;
 import Pimod.patches.PIClassEnum;
@@ -118,7 +124,11 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new redStone());
         this.cardsToAdd.add(new steel());
         this.cardsToAdd.add(new stone());
-
+        this.cardsToAdd.add(new baton());
+        this.cardsToAdd.add(new getBaton());
+        this.cardsToAdd.add(new fishboneTunnel());
+        this.cardsToAdd.add(new iaido());
+        this.cardsToAdd.add(new remove());
     }
 
     @Override

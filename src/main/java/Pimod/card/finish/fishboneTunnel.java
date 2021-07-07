@@ -1,7 +1,6 @@
-package Pimod.card.working;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,46 +10,45 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import basemod.abstracts.CustomCard;
 import static Pimod.cardActions.returnRandomMineralCard.getCommonMineralCard;
 import static Pimod.cardActions.returnRandomMineralCard.getUncommonMineralCard;
-
-/*升级效果未完成
-*
+/*升级效果未测试
 * */
-public class excavate extends CustomCard {
-    public static final String ID = "excavate";
-    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+public class fishboneTunnel extends CustomCard {
+    public static final String ID = "fishboneTunnel";
+    private static CardStrings cardStrings;
+    public static  String NAME;
+    public static  String DESCRIPTION;
     public static final String IMG_PATH = "cards/shuai_img.png";
-    private static final int COST = 0;
-    private static final int VULNERABLE_AMT = 1;
-
-    public excavate() {
+    private static final int COST = 1;
+    private static int UncommonMineralAmt = 1;
+    public fishboneTunnel() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.PI_COLOR,
-                CardRarity.UNCOMMON, CardTarget.NONE);
-        this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
+                CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseMagicNumber = 1;
+        this.magicNumber=this.baseMagicNumber;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawCardAction(1));
-        if(this.upgraded){
-            this.addToBot(new MakeTempCardInHandAction(getUncommonMineralCard(),1));
-        }else {
-            this.addToBot(new MakeTempCardInHandAction(getCommonMineralCard(),1));
-        }
-
+        this.addToBot(new MakeTempCardInHandAction(getCommonMineralCard(),magicNumber));
+        this.addToBot(new MakeTempCardInHandAction(getUncommonMineralCard(),UncommonMineralAmt));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new excavate();
+        return new fishboneTunnel();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(1);
         }
+    }
+    static {
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("fishboneTunnel");
+        NAME = cardStrings.NAME;
+        DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }

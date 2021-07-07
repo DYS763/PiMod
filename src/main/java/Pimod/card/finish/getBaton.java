@@ -1,41 +1,42 @@
-package Pimod.card.testCard;
-
-import Pimod.actions.doubleDebuff;
+package Pimod.card.finish;
+import Pimod.armOrbs.batonOrb;
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import Pimod.actions.meidelao;
 
-//双倍debuff  未完成
-public class quede extends CustomCard{
+/*获得接力棒的卡
 
-    public static final String ID = "quede";
-    public static final String IMG_PATH = "img/cards/Defend_MRS.png";
+* */
+public class getBaton extends CustomCard{
+
+    public static final String ID = "getBaton";
+    public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 5;
     private static final int UPGRADE_PLUS_BLOCK = 3;
 
-    public quede() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
+    public getBaton() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
         this.baseBlock = 5;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new doubleDebuff(m));
-
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        this.addToBot(new ChannelAction(new batonOrb()));
     }
 
     public AbstractCard makeCopy() {
-        return new quede();
+        return new getBaton();
     }
 
     public boolean isDefend() {
@@ -45,14 +46,15 @@ public class quede extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeBlock(3);
         }
 
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("quede");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("getBaton");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }
+
