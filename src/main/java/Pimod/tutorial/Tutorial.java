@@ -7,10 +7,18 @@ import Pimod.card.finish.getBaton;
 import Pimod.card.finish.fishboneTunnel;
 import Pimod.card.finish.iaido;
 import Pimod.card.finish.remove;
+import Pimod.card.finish.evillyDevote;
+import Pimod.card.finish.gambling;
 import Pimod.card.working.obsidian;
+import Pimod.card.finish.panicAttack;
+import Pimod.card.finish.temporaryWeapon;
+import Pimod.card.finish.sorbet;
+import Pimod.card.finish.recklessAttack;
+import Pimod.card.finish.paraInfect;
 import Pimod.characters.A_PI;
 import Pimod.patches.AbstractCardEnum;
 import Pimod.patches.PIClassEnum;
+import Pimod.relic.bread;
 import Pimod.relic.goldenApple;
 import basemod.BaseMod;
 import basemod.interfaces.*;
@@ -59,7 +67,9 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
 
     @Override
     public void receiveEditRelics() {
+        BaseMod.addRelicToCustomPool(new bread(), AbstractCardEnum.PI_COLOR);
         BaseMod.addRelicToCustomPool(new goldenApple(), AbstractCardEnum.PI_COLOR);
+
     }
 
     @Override
@@ -132,6 +142,13 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new fishboneTunnel());
         this.cardsToAdd.add(new iaido());
         this.cardsToAdd.add(new remove());
+        this.cardsToAdd.add(new evillyDevote());
+        this.cardsToAdd.add(new panicAttack());
+        this.cardsToAdd.add(new temporaryWeapon());
+        this.cardsToAdd.add(new gambling());
+        this.cardsToAdd.add(new sorbet());
+        this.cardsToAdd.add(new recklessAttack());
+        this.cardsToAdd.add(new paraInfect());
     }
 
     @Override

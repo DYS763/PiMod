@@ -30,7 +30,9 @@ public class fishboneTunnel extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeTempCardInHandAction(getCommonMineralCard(),magicNumber));
+        for(int i=0;i<magicNumber;i++){
+            this.addToBot(new MakeTempCardInHandAction(getCommonMineralCard(),1));
+        }
         this.addToBot(new MakeTempCardInHandAction(getUncommonMineralCard(),UncommonMineralAmt));
     }
 

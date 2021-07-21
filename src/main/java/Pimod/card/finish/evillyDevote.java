@@ -1,18 +1,19 @@
-package Pimod.card.working;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
+import Pimod.powers.cursedPower;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.ApplyBulletTimeAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class obsidian extends CustomCard{
+public class evillyDevote extends CustomCard{
 
-    public static final String ID = "obsidian";
+    public static final String ID = "evillyDevote";
     public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
@@ -20,18 +21,18 @@ public class obsidian extends CustomCard{
     private static final int COST = 0;
     private static final boolean isMine = true;
 
-    public obsidian() {
+    public evillyDevote() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.RARE, CardTarget.SELF);
-        this.baseBlock = 5;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        this.addToBot(new ApplyBulletTimeAction());
+        this.addToBot(new ApplyPowerAction(p,p,new cursedPower(p)));
     }
 
     public AbstractCard makeCopy() {
-        return new obsidian();
+        return new evillyDevote();
     }
 
     public boolean isDefend() {
@@ -41,13 +42,12 @@ public class obsidian extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(3);
         }
 
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("obsidian");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("evillyDevote");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

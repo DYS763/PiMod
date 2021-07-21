@@ -12,5 +12,12 @@
       "反击",
       ""
     ]
+  },
+  "cursedPower": {
+    "NAME": "诅咒",
+    "DESCRIPTIONS": [
+      "啊",
+      ""
+    ]
   }
 }

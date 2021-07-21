@@ -1,4 +1,4 @@
-package Pimod.card.working;
+package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;

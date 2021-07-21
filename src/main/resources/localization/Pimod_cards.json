@@ -233,6 +233,39 @@
     "NAME": "挖掘",
     "DESCRIPTION": "抽一张牌，获得一张随机矿物",
     "UPGRADE_DESCRIPTION": "抽一张牌，获得一张已升级的随机矿物"
+  },
+  "evillyDevote": {
+    "NAME": "邪恶献身",
+    "DESCRIPTION": "试试",
+    "UPGRADE_DESCRIPTION": "抽一张牌，获得一张已升级的随机矿物"
+  },
+  "panicAttack": {
+    "NAME": "慌乱推击",
+    "DESCRIPTION": "造成 !D! 点伤害，若你没有武器，则再次造成 !D! 点伤害",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若你没有武器，则再次造成 !D! 点伤害"
+  },
+  "temporaryWeapon": {
+    "NAME": "临时武器",
+    "DESCRIPTION": "造成 !D! 点伤害，生成木棍",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，生成木棍"
+  },
+  "gambling": {
+    "NAME": "羸弱赌徒",
+    "DESCRIPTION": "随机化你手牌的耗能。造成3点伤害4次。",
+    "UPGRADE_DESCRIPTION": "随机化你手牌的耗能。造成3点伤害4次。"
+  },
+  "sorbet": {
+    "NAME": "草莓冰沙",
+    "DESCRIPTION": "在你的手牌中加入X张奇迹。消耗，保留。",
+    "UPGRADE_DESCRIPTION": "在你的手牌中加入X张奇迹。消耗，保留。"
+  },  "recklessAttack": {
+  "NAME": "莽撞一击",
+  "DESCRIPTION": "造成7点伤害，如果你拥有武器，移除并获得2点能量。",
+  "UPGRADE_DESCRIPTION": "造成7点伤害，如果你拥有武器，移除并获得2点能量。"
+},
+  "paraInfect": {
+    "NAME": "寄染",
+    "DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
   }
-
 }

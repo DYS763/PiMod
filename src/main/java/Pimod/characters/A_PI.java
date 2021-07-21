@@ -73,6 +73,7 @@ public class A_PI extends CustomPlayer {
         retVal.add("Defend_PI");
         retVal.add("Moniyixia");
         retVal.add("extendstest1");
+        retVal.add("testForOrb");
         retVal.add("flare");  // 12张
 
         return retVal;
@@ -81,7 +82,7 @@ public class A_PI extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList();
-        retVal.add("Pimod_goldenApple");
+        retVal.add("bread");
         return retVal;
     }
 
