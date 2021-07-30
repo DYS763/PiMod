@@ -1,15 +1,12 @@
-package Pimod.armOrbs;
-import Pimod.card.testCard.testForOrb;
+package Pimod.card.working.armCards;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,24 +14,21 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect.OrbFlareColor;
-/*爆炸箭
-在你的回合开始时对所有敌人造成6点伤害，受到2点伤害。
-回收未完成
-* */
-public class boomArrowOrb extends AbstractOrb {
-    public static final String ORB_ID = "testForOrb";
+
+public class magnumOrb extends AbstractOrb {
+    public static final String ORB_ID = "magnumOrb";
+    public static final String POWER_ID = "magnumPower";
     private static final OrbStrings orbString;
     public static final String[] DESC;
     private float vfxTimer = 1.0F;
     private float vfxIntervalMin = 0.1F;
     private float vfxIntervalMax = 0.4F;
-    private int baseDamage = 6;
-    public boomArrowOrb() {
-        this.ID = "Plasma";
+
+
+    public magnumOrb() {
+        this.ID = "magnumOrb";
         this.img = ImageMaster.ORB_PLASMA;
         this.name = orbString.NAME;
         this.baseEvokeAmount = 2;
@@ -45,21 +39,24 @@ public class boomArrowOrb extends AbstractOrb {
         this.angle = MathUtils.random(360.0F);
         this.channelAnimTimer = 0.5F;
     }
+    public void update(){
+        super.update();
+
+        AbstractPlayer p = AbstractDungeon.player;
+        if(!AbstractDungeon.player.hasPower(POWER_ID)&&AbstractDungeon.actionManager.isEmpty()){
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p,p,new magnumPower(p)));
+        }
+    }
 
     public void updateDescription() {
-        this.applyFocus();
+
         this.description = DESC[0] + this.evokeAmount + DESC[1];
     }
 
     public void onEvoke() {
-        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new testForOrb(),1));
+        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new magnum(),1));
     }
 
-    public void onStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareColor.PLASMA), 0.1F));
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, baseDamage,DamageInfo.DamageType.NORMAL,AbstractGameAction.AttackEffect.FIRE));
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(AbstractDungeon.player,AbstractDungeon.player,2, AbstractGameAction.AttackEffect.FIRE));
-    }
 
     public void triggerEvokeAnimation() {
         CardCrawlGame.sound.play("ORB_PLASMA_EVOKE", 0.1F);
@@ -100,11 +97,11 @@ public class boomArrowOrb extends AbstractOrb {
     }
 
     public AbstractOrb makeCopy() {
-        return new emptyOrb();
+        return new magnumOrb();
     }
 
     static {
-        orbString = CardCrawlGame.languagePack.getOrbString("testForOrb");
+        orbString = CardCrawlGame.languagePack.getOrbString("magnumOrb");
         DESC = orbString.DESCRIPTION;
     }
 }

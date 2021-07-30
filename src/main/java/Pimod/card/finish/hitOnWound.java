@@ -1,9 +1,7 @@
-package Pimod.card.working;
+package Pimod.card.finish;
 
 import Pimod.actions.unnamedAction;
 import Pimod.patches.AbstractCardEnum;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,9 +12,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.Iterator;
 
-public class unnamed extends AbstractCard {
+public class hitOnWound extends AbstractCard {
 
-    public static final String ID = "unnamed";
+    public static final String ID = "hitOnWound";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
@@ -25,8 +23,8 @@ public class unnamed extends AbstractCard {
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    public unnamed() {
-        super("unnamed", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public hitOnWound() {
+        super("hitOnWound", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
 
         this.baseDamage = 5;
 
@@ -50,7 +48,7 @@ public class unnamed extends AbstractCard {
     }
 
     public AbstractCard makeCopy() {
-        return new unnamed();
+        return new hitOnWound();
     }
 
 
@@ -63,7 +61,7 @@ public class unnamed extends AbstractCard {
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("unnamed");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("hitOnWound");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

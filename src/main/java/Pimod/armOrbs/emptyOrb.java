@@ -4,8 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -14,12 +12,10 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect.OrbFlareColor;
 
-public class testOrb extends AbstractOrb {
+public class emptyOrb extends AbstractOrb {
     public static final String ORB_ID = "testForOrb";
     private static final OrbStrings orbString;
     public static final String[] DESC;
@@ -29,7 +25,7 @@ public class testOrb extends AbstractOrb {
     private static final float ORB_WAVY_DIST = 0.04F;
     private static final float PI_4 = 12.566371F;
 
-    public testOrb() {
+    public emptyOrb() {
         this.ID = "Plasma";
         this.img = ImageMaster.ORB_PLASMA;
         this.name = orbString.NAME;
@@ -41,6 +37,11 @@ public class testOrb extends AbstractOrb {
         this.angle = MathUtils.random(360.0F);
         this.channelAnimTimer = 0.5F;
     }
+    public void update(){
+        super.update();
+
+
+    }
 
     public void updateDescription() {
         this.applyFocus();
@@ -51,10 +52,6 @@ public class testOrb extends AbstractOrb {
         AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new testForOrb(),1));
     }
 
-    public void onStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareColor.PLASMA), 0.1F));
-        AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(2));
-    }
 
     public void triggerEvokeAnimation() {
         CardCrawlGame.sound.play("ORB_PLASMA_EVOKE", 0.1F);
@@ -95,7 +92,7 @@ public class testOrb extends AbstractOrb {
     }
 
     public AbstractOrb makeCopy() {
-        return new testOrb();
+        return new emptyOrb();
     }
 
     static {

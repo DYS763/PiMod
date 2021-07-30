@@ -44,6 +44,10 @@ public class batonOrb extends AbstractOrb {
         this.channelAnimTimer = 0.5F;
     }
 
+    public void update(){
+        super.update();
+
+    }
     public void updateDescription() {
         this.applyFocus();
         this.description = DESC[0] + this.evokeAmount + DESC[1];
@@ -97,7 +101,7 @@ public class batonOrb extends AbstractOrb {
     }
 
     public AbstractOrb makeCopy() {
-        return new testOrb();
+        return new emptyOrb();
     }
 
     static {

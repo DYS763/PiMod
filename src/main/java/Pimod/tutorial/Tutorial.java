@@ -15,6 +15,8 @@ import Pimod.card.finish.temporaryWeapon;
 import Pimod.card.finish.sorbet;
 import Pimod.card.finish.recklessAttack;
 import Pimod.card.finish.paraInfect;
+import Pimod.card.working.armCards.getMagnum;
+import Pimod.card.working.armCards.magnum;
 import Pimod.characters.A_PI;
 import Pimod.patches.AbstractCardEnum;
 import Pimod.patches.PIClassEnum;
@@ -127,37 +129,44 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new stone());
 
         //武器牌
-        this.cardsToAdd.add(new getBaton());
+        this.cardsToAdd.add(new baton());
+        this.cardsToAdd.add(new magnum());
 
         //主卡组
-        this.cardsToAdd.add(new Defend_PI());
-        this.cardsToAdd.add(new Strike_PI());
-        this.cardsToAdd.add(new Moniyixia());
-        this.cardsToAdd.add(new Furou());
-        this.cardsToAdd.add(new Yinggangguangxian());
-        this.cardsToAdd.add(new Youjiguangxian());
-        this.cardsToAdd.add(new Chengzhineifire());
-        this.cardsToAdd.add(new Niunai());
-        this.cardsToAdd.add(new meide());
-        this.cardsToAdd.add(new diaoling());
-        this.cardsToAdd.add(new quede());
-        this.cardsToAdd.add(new baton());
-        this.cardsToAdd.add(new fishboneTunnel());
-        this.cardsToAdd.add(new iaido());
-        this.cardsToAdd.add(new remove());
-        this.cardsToAdd.add(new evillyDevote());
-        this.cardsToAdd.add(new panicAttack());
-        this.cardsToAdd.add(new temporaryWeapon());
-        this.cardsToAdd.add(new gambling());
-        this.cardsToAdd.add(new sorbet());
-        this.cardsToAdd.add(new recklessAttack());
-        this.cardsToAdd.add(new paraInfect());
-        this.cardsToAdd.add(new watchForChance());
-        this.cardsToAdd.add(new allChoice());
-        this.cardsToAdd.add(new heavyAttack());
-        this.cardsToAdd.add(new lightUp());
-        this.cardsToAdd.add(new sharpenBlade());
-        this.cardsToAdd.add(new unnamed());
+        this.cardsToAdd.add(new Defend_PI());   //防御
+        this.cardsToAdd.add(new Strike_PI());   //打击
+        this.cardsToAdd.add(new Moniyixia());   //伤害白卡
+        this.cardsToAdd.add(new Furou());       //腐肉 恢复手段白卡
+        this.cardsToAdd.add(new Yinggangguangxian());   //硬刚光线
+        this.cardsToAdd.add(new Youjiguangxian());      //游击光线 两个造成短暂debuff的卡牌
+        this.cardsToAdd.add(new Chengzhineifire());     //城之内fire 多段伤害卡
+        this.cardsToAdd.add(new Niunai());              //牛奶 清除debuff手段
+        this.cardsToAdd.add(new meide());               //美德 缺德流补齐组件之一
+        this.cardsToAdd.add(new diaoling());            //凋零 上重创的白卡
+        this.cardsToAdd.add(new quede());               //缺德 双倍debuff
+        this.cardsToAdd.add(new getBaton());               //接力棒 过牌
+        this.cardsToAdd.add(new fishboneTunnel());      //鱼骨矿道 矿物类型增益卡
+        this.cardsToAdd.add(new iaido());               //居合 高伤强制过回合蓝卡
+        this.cardsToAdd.add(new remove());              //解除武装 移除武器 过牌基础卡
+        this.cardsToAdd.add(new evillyDevote());        //邪恶献身 高强度高风险增益金卡
+        this.cardsToAdd.add(new panicAttack());         //慌乱推击 伤害白卡
+        this.cardsToAdd.add(new temporaryWeapon());     //临时武器 伤害白卡
+        this.cardsToAdd.add(new gambling());            //羸弱赌徒 伤害蓝卡 随即手牌能量
+        this.cardsToAdd.add(new sorbet());              //草莓冰沙 存储能量 运营蓝卡
+        this.cardsToAdd.add(new recklessAttack());      //莽撞一击 移除武器 充能蓝卡
+        this.cardsToAdd.add(new paraInfect());          //寄染 自身debuff转化为buff debuff流高强度金卡
+        this.cardsToAdd.add(new watchForChance());      //等待时机 选择蓝卡
+        this.cardsToAdd.add(new allChoice());           //全选 强化选择卡
+        this.cardsToAdd.add(new heavyAttack());         //重击
+        this.cardsToAdd.add(new lightUp());             //点亮 防御增益蓝卡
+        this.cardsToAdd.add(new sharpenBlade());        //打磨利刃 重伤流组件
+        this.cardsToAdd.add(new hitOnWound());             //类似飞身踢的回费抽1蓝卡
+        this.cardsToAdd.add(new doubleEdgedSword());        //双刃剑 高质量消耗金卡
+        this.cardsToAdd.add(new poleVault());               //撑杆跳 蓝卡防御
+        this.cardsToAdd.add(new reaper());                  //收割者镰刀 蓝卡回血
+        this.cardsToAdd.add(new hideAndSeek());             //躲猫猫 防御卡
+        this.cardsToAdd.add(new getMagnum());
+
 
         //选择牌附属
         this.cardsToAdd.add(new piUpgrade());

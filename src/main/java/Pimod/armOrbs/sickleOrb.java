@@ -97,7 +97,7 @@ public class sickleOrb extends AbstractOrb {
     }
 
     public AbstractOrb makeCopy() {
-        return new testOrb();
+        return new emptyOrb();
     }
 
     static {

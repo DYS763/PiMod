@@ -220,8 +220,8 @@
     "UPGRADE_DESCRIPTION": " 1"
   },
   "reaper": {
-    "NAME": "居合",
-    "DESCRIPTION": "获得5点格挡，结束你的回合，架势。",
+    "NAME": "收割者镰刀",
+    "DESCRIPTION": "造成10点伤害，斩杀时恢复6生命,消耗",
     "UPGRADE_DESCRIPTION": " 1"
   },
   "remove": {
@@ -308,9 +308,29 @@
     "DESCRIPTION": "每使用一张攻击牌",
     "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
   },
-  "unnamed": {
+  "hitOnWound": {
     "NAME": "落井下石",
     "DESCRIPTION": "造成5点伤害，如果敌人由重伤状态，获得1费并且抽一张牌",
     "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "doubleEdgedSword": {
+    "NAME": "双刃剑",
+    "DESCRIPTION": "对全体造成14点伤害，和4重创",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "poleVault": {
+    "NAME": "撑杆跳",
+    "DESCRIPTION": "获得9点格挡，1点敏捷",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "getMagnum": {
+  "NAME": "马格南之鹰",
+  "DESCRIPTION": "获得9点格挡，1点敏捷",
+  "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+},
+  "magnum": {
+    "NAME": "马格南",
+    "DESCRIPTION": "获得9点格挡，1点敏捷",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
   }
 }
