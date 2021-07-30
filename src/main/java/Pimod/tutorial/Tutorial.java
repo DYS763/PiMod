@@ -9,7 +9,7 @@ import Pimod.card.finish.iaido;
 import Pimod.card.finish.remove;
 import Pimod.card.finish.evillyDevote;
 import Pimod.card.finish.gambling;
-import Pimod.card.working.obsidian;
+import Pimod.card.working.*;
 import Pimod.card.finish.panicAttack;
 import Pimod.card.finish.temporaryWeapon;
 import Pimod.card.finish.sorbet;
@@ -95,26 +95,9 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         logger.info("done editing characters");
     }
     private void loadCardsToAdd() {
+
+        //测试用牌
         this.cardsToAdd.clear();
-        this.cardsToAdd.add(new flare());
-        this.cardsToAdd.add(new Defend_PI());
-        this.cardsToAdd.add(new Strike_PI());
-        this.cardsToAdd.add(new flare1());
-        this.cardsToAdd.add(new flare2());
-        this.cardsToAdd.add(new flare3());
-        this.cardsToAdd.add(new flare11());
-        this.cardsToAdd.add(new flare12());
-        this.cardsToAdd.add(new flare13());
-        this.cardsToAdd.add(new flare01());
-        this.cardsToAdd.add(new flare02());
-        this.cardsToAdd.add(new flare03());
-        this.cardsToAdd.add(new Moniyixia());
-        this.cardsToAdd.add(new Furou());
-        this.cardsToAdd.add(new Yinggangguangxian());
-        this.cardsToAdd.add(new Youjiguangxian());
-        this.cardsToAdd.add(new Chengzhineifire());
-        this.cardsToAdd.add(new Niunai());
-        this.cardsToAdd.add(new meide());
         this.cardsToAdd.add(new extendstest1());
         this.cardsToAdd.add(new extendstest2());
         this.cardsToAdd.add(new extendstest3());
@@ -124,9 +107,14 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new extendstest111());
         this.cardsToAdd.add(new extendstest122());
         this.cardsToAdd.add(new extendstest133());
-        this.cardsToAdd.add(new diaoling());
-        this.cardsToAdd.add(new quede());
+        this.cardsToAdd.add(new flare3());
+        this.cardsToAdd.add(new flare11());
+        this.cardsToAdd.add(new flare13());
+        this.cardsToAdd.add(new flare01());
+        this.cardsToAdd.add(new flare03());
         this.cardsToAdd.add(new testForOrb());
+
+        //矿物牌
         this.cardsToAdd.add(new coal());
         this.cardsToAdd.add(new diamond());
         this.cardsToAdd.add(new glowStone());
@@ -137,8 +125,23 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new redStone());
         this.cardsToAdd.add(new steel());
         this.cardsToAdd.add(new stone());
-        this.cardsToAdd.add(new baton());
+
+        //武器牌
         this.cardsToAdd.add(new getBaton());
+
+        //主卡组
+        this.cardsToAdd.add(new Defend_PI());
+        this.cardsToAdd.add(new Strike_PI());
+        this.cardsToAdd.add(new Moniyixia());
+        this.cardsToAdd.add(new Furou());
+        this.cardsToAdd.add(new Yinggangguangxian());
+        this.cardsToAdd.add(new Youjiguangxian());
+        this.cardsToAdd.add(new Chengzhineifire());
+        this.cardsToAdd.add(new Niunai());
+        this.cardsToAdd.add(new meide());
+        this.cardsToAdd.add(new diaoling());
+        this.cardsToAdd.add(new quede());
+        this.cardsToAdd.add(new baton());
         this.cardsToAdd.add(new fishboneTunnel());
         this.cardsToAdd.add(new iaido());
         this.cardsToAdd.add(new remove());
@@ -149,6 +152,17 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         this.cardsToAdd.add(new sorbet());
         this.cardsToAdd.add(new recklessAttack());
         this.cardsToAdd.add(new paraInfect());
+        this.cardsToAdd.add(new watchForChance());
+        this.cardsToAdd.add(new allChoice());
+        this.cardsToAdd.add(new heavyAttack());
+        this.cardsToAdd.add(new lightUp());
+        this.cardsToAdd.add(new sharpenBlade());
+        this.cardsToAdd.add(new unnamed());
+
+        //选择牌附属
+        this.cardsToAdd.add(new piUpgrade());
+        this.cardsToAdd.add(new piDraw());
+        this.cardsToAdd.add(new piWeaken());
     }
 
     @Override
@@ -158,7 +172,7 @@ public class Tutorial implements EditCardsSubscriber, PostDungeonInitializeSubsc
         logger.info(">>>初始化完成<<<");
     }
     public void receivePostInitialize() {
-//        change = new Texture(Gdx.files.internal("img/UI/campfire/ShopOnline.png"));
+
     }
     @Override
     public void receiveEditStrings() {

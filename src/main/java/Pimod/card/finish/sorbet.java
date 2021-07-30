@@ -20,7 +20,7 @@ public class sorbet extends CustomCard {
 
     public sorbet() {
         super(ID, NAME, IMG_PATH, -1, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.PI_COLOR,
+                CardType.SKILL, AbstractCardEnum.PI_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF);
         this.returnToHand=true;
         this.exhaust=true;

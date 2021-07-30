@@ -19,5 +19,19 @@
       "啊",
       ""
     ]
+  },
+  "allChoicePower": {
+    "NAME": "全做",
+    "DESCRIPTIONS": [
+      "啊",
+      ""
+    ]
+  },
+  "sharpenBladePower": {
+    "NAME": "打磨利刃",
+    "DESCRIPTIONS": [
+      "啊",
+      ""
+    ]
   }
 }

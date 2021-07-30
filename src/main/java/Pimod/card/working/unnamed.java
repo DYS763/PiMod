@@ -1,5 +1,6 @@
-package Pimod.card.already;
+package Pimod.card.working;
 
+import Pimod.actions.unnamedAction;
 import Pimod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,9 +12,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Strike_PI extends AbstractCard {
+import java.util.Iterator;
 
-    public static final String ID = "Strike_PI";
+public class unnamed extends AbstractCard {
+
+    public static final String ID = "unnamed";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
@@ -22,26 +25,34 @@ public class Strike_PI extends AbstractCard {
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
 
-    public Strike_PI() {
-        super("Strike_PI", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
-        //this.tags.add(CardTags.STARTER_STRIKE);
-        //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
-        this.baseDamage = 6;
+    public unnamed() {
+        super("unnamed", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
+
+        this.baseDamage = 5;
 
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard card;
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new unnamedAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+    }
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        Iterator var1 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+
+        while(var1.hasNext()) {
+            AbstractMonster m = (AbstractMonster)var1.next();
+            if (!m.isDeadOrEscaped() && m.hasPower("Weakened")) {
+                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+                break;
+            }
+        }
+
     }
 
     public AbstractCard makeCopy() {
-        return new Strike_PI();
+        return new unnamed();
     }
 
-    public boolean isStrike() {
-        return true;
-    }
 
     public void upgrade() {
         if (!this.upgraded) {
@@ -52,7 +63,7 @@ public class Strike_PI extends AbstractCard {
     }
 
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("Strike_PI");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings("unnamed");
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

@@ -2,6 +2,8 @@ package Pimod.card.finish;
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.PummelDamageAction;
 import com.megacrit.cardcrawl.actions.unique.RandomizeHandCostAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,13 +26,14 @@ public class gambling extends CustomCard{
     public gambling() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 3;
-        this.magicNumber = 4;
+        this.baseMagicNumber = 4;
+        this.magicNumber =baseMagicNumber;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new RandomizeHandCostAction());
-        for(int i = 1; i < this.magicNumber; ++i) {
-            this.addToBot(new PummelDamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+        for(int i = 0; i < this.magicNumber; ++i) {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
     }
 

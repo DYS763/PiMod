@@ -267,5 +267,50 @@
     "NAME": "寄染",
     "DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。",
     "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "piDraw": {
+    "NAME": "抽卡",
+    "DESCRIPTION": "抽卡",
+    "UPGRADE_DESCRIPTION": "抽卡"
+  },
+  "piUpgrade": {
+    "NAME": "升级",
+    "DESCRIPTION": "升级",
+    "UPGRADE_DESCRIPTION": "升级"
+  },
+  "piWeaken": {
+    "NAME": "虚弱",
+    "DESCRIPTION": "虚弱",
+    "UPGRADE_DESCRIPTION": "虚弱"
+  },
+  "watchForChance": {
+    "NAME": "静观其变",
+    "DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "allChoice": {
+    "NAME": "全做",
+    "DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "heavyAttack": {
+    "NAME": "猛击",
+    "DESCRIPTION": "造成6点伤害，2层凋零",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "lightUp": {
+    "NAME": "亮度14",
+    "DESCRIPTION": "造成6点伤害，2层凋零",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "sharpenBlade": {
+    "NAME": "打磨利刃",
+    "DESCRIPTION": "每使用一张攻击牌",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "unnamed": {
+    "NAME": "落井下石",
+    "DESCRIPTION": "造成5点伤害，如果敌人由重伤状态，获得1费并且抽一张牌",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
   }
 }

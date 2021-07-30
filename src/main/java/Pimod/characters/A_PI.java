@@ -66,15 +66,7 @@ public class A_PI extends CustomPlayer {
 
 
         retVal.add("Strike_PI");
-        retVal.add("Strike_PI");
-        retVal.add("Strike_PI");
-        retVal.add("Strike_PI");
-        retVal.add("Strike_PI");
-        retVal.add("Defend_PI");
-        retVal.add("Moniyixia");
-        retVal.add("extendstest1");
-        retVal.add("testForOrb");
-        retVal.add("flare");  // 12张
+        // 12张
 
         return retVal;
     }

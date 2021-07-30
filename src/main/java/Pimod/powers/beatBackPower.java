@@ -5,10 +5,18 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import Pimod.others.HasOrb;
+
+import java.util.Iterator;
+
+import static Pimod.others.HasOrb.hasOrb;
 
 public class beatBackPower extends AbstractPower {
     public  static final String POWER_ID="beatBackPower";
@@ -41,6 +49,7 @@ public class beatBackPower extends AbstractPower {
         return damageAmount;
     }
 
+
     @Override
     public void atStartOfTurn() {
         super.atStartOfTurn();
@@ -56,6 +65,7 @@ public class beatBackPower extends AbstractPower {
         NAME = powerStrings.NAME;
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
+
 
 
 }
