@@ -24,7 +24,7 @@ public class reaper extends AbstractCard {
     private static final int UPGRADE_PLUS_DMG = 3;
 
     public reaper() {
-        super(ID, NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.ENEMY);
         //this.tags.add(CardTags.STARTER_STRIKE);
         //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
         this.baseDamage = 10;
@@ -34,18 +34,13 @@ public class reaper extends AbstractCard {
         this.exhaust = true;
 
     }
-
     public void use(AbstractPlayer p, AbstractMonster m) {
-
         this.addToBot(new reaperAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), this.magicNumber));
-        
     }
 
     public AbstractCard makeCopy() {
         return new reaper();
     }
-
-
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
@@ -53,7 +48,6 @@ public class reaper extends AbstractCard {
             this.upgradeMagicNumber(2);
         }
     }
-
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;

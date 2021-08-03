@@ -332,5 +332,41 @@
     "NAME": "马格南",
     "DESCRIPTION": "获得9点格挡，1点敏捷",
     "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "chooseWeapon": {
+    "NAME": "选择武器",
+    "DESCRIPTION": "造成9点伤害，若敌人身上有debuff",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "kaya": {
+    "NAME": "kaya",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "sange": {
+    "NAME": "sange",
+    "DESCRIPTION": "2",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "yashiya": {
+    "NAME": "yashiya",
+    "DESCRIPTION": "3",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "getKaya": {
+    "NAME": "getKaya",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "getSange": {
+    "NAME": "getSange",
+    "DESCRIPTION": "2",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "getYashiya": {
+    "NAME": "getYashiya",
+    "DESCRIPTION": "3",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
   }
+
 }

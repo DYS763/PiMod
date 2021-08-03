@@ -1,4 +1,4 @@
-package Pimod.card.working.armCards;
+package Pimod.card.working.armCards.workshop.chooseWeapon;
 
 
 import com.badlogic.gdx.graphics.Texture;
@@ -14,13 +14,13 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class magnumPower extends AbstractPower {
-    public  static final String POWER_ID="magnumPower";
+public class kayaPower extends AbstractPower {
+    public  static final String POWER_ID="kayaPower";
     private  static  final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
-    public  static  final  String ORB_ID ="magnumOrb";
-    public magnumPower(AbstractCreature owner){
+    public  static  final  String ORB_ID ="kayaOrb";
+    public kayaPower(AbstractCreature owner){
         this.name = powerStrings.NAME;
         this.ID = POWER_ID;
         this.owner = owner;

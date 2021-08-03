@@ -35,7 +35,28 @@
     ]
   },
   "magnumPower": {
-    "NAME": "power",
+    "NAME": "马格南",
+    "DESCRIPTIONS": [
+      "啊",
+      ""
+    ]
+  },
+  "kayaPower": {
+    "NAME": "kaya",
+    "DESCRIPTIONS": [
+      "啊",
+      ""
+    ]
+  },
+  "sangePower": {
+    "NAME": "sange",
+    "DESCRIPTIONS": [
+      "啊",
+      ""
+    ]
+  },
+  "yashiyaPower": {
+    "NAME": "yashiya",
     "DESCRIPTIONS": [
       "啊",
       ""

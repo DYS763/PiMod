@@ -1,4 +1,5 @@
-package Pimod.card.working.armCards;
+package Pimod.card.working.armCards.workshop.chooseWeapon;
+
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -17,9 +18,9 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.PlasmaOrbPassiveEffect;
 
-public class magnumOrb extends AbstractOrb {
-    public static final String ORB_ID = "magnumOrb";
-    public static final String POWER_ID = "magnumPower";
+public class sangeOrb extends AbstractOrb {
+    public static final String ORB_ID = "sangeOrb";
+    public static final String POWER_ID = "sangePower";
     private static final OrbStrings orbString;
     public static final String[] DESC;
     private float vfxTimer = 1.0F;
@@ -27,8 +28,8 @@ public class magnumOrb extends AbstractOrb {
     private float vfxIntervalMax = 0.4F;
 
 
-    public magnumOrb() {
-        this.ID = "magnumOrb";
+    public sangeOrb() {
+        this.ID = ORB_ID;
         this.img = ImageMaster.ORB_PLASMA;
         this.name = orbString.NAME;
         this.baseEvokeAmount = 2;
@@ -41,11 +42,10 @@ public class magnumOrb extends AbstractOrb {
     }
     public void update(){
         super.update();
-
         AbstractPlayer p = AbstractDungeon.player;
         AbstractDungeon.actionManager.update();
         if(!AbstractDungeon.player.hasPower(POWER_ID)&&AbstractDungeon.actionManager.isEmpty()){
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p,p,new magnumPower(p)));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p,p,new sangePower(p)));
         }
     }
 
@@ -55,7 +55,7 @@ public class magnumOrb extends AbstractOrb {
     }
 
     public void onEvoke() {
-        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new magnum(),1));
+        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new sange(),1));
     }
 
 
@@ -98,11 +98,11 @@ public class magnumOrb extends AbstractOrb {
     }
 
     public AbstractOrb makeCopy() {
-        return new magnumOrb();
+        return new sangeOrb();
     }
 
     static {
-        orbString = CardCrawlGame.languagePack.getOrbString("magnumOrb");
+        orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
         DESC = orbString.DESCRIPTION;
     }
 }

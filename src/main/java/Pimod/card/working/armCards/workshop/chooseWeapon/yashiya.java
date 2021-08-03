@@ -1,59 +1,46 @@
-package Pimod.card.finish;
+package Pimod.card.working.armCards.workshop.chooseWeapon;
+
+
 
 import Pimod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
 
-public class hideAndSeek extends CustomCard{
-
-    public static final String ID = "hideAndSeek";
+public class yashiya extends CustomCard{
+    public static final String ID = "yashiya";
     public static final String IMG_PATH = "cards/fangyu.png";
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = 2;
-
-    public hideAndSeek() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
+    private static final int COST = 1;
+    public yashiya() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.baseMagicNumber = 1;
-        this.magicNumber =this.baseMagicNumber;
-        this.exhaust = true;
-        this.isEthereal = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ChannelAction(new yashiyaOrb()));
     }
 
     public AbstractCard makeCopy() {
-        return new hideAndSeek();
-    }
-
-    public boolean isDefend() {
-        return true;
+        return new yashiya();
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isEthereal = false;
+            this.upgradeBaseCost(0);
         }
-
     }
-
     static {
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }
 }
-

@@ -85,6 +85,41 @@
       " 点 #y格挡 。"
     ],
     "NAME": "死亡巨镰"
+  },
+
+  "kayaOrb": {
+    "DESCRIPTION": [
+      "kaya",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "死亡巨镰"
+  },
+
+  "yashiyaOrb": {
+    "DESCRIPTION": [
+      "yashiya",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "死亡巨镰"
+  },
+
+  "sangeOrb": {
+    "DESCRIPTION": [
+      "sange",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "死亡巨镰"
+  },
+  "emptyOrb": {
+    "DESCRIPTION": [
+      "empty",
+      "empty",
+      "empty"
+    ],
+    "NAME": "死亡巨镰"
   }
 
 }

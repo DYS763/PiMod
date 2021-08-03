@@ -1,5 +1,6 @@
 package Pimod.card.working;
 
+import Pimod.patches.AbstractCardEnum;
 import Pimod.powers.allChoicePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,7 +15,7 @@ public class allChoice extends AbstractCard {
     private static final CardStrings cardStrings;
 
     public allChoice() {
-        super("allChoice", cardStrings.NAME, "red/power/demon_form", 3, cardStrings.DESCRIPTION, CardType.POWER, CardColor.RED, CardRarity.RARE, CardTarget.NONE);
+        super("allChoice", cardStrings.NAME, "red/power/demon_form", 3, cardStrings.DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.NONE);
         this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
     }

@@ -36,10 +36,13 @@ public class getMagnum extends AbstractCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
         this.addToBot(new ChannelAction(new magnumOrb()));
         if(!p.hasPower("magnumPower")){
-        this.addToTop(new ApplyPowerAction(p,p,new magnumPower(p)));}
+            this.addToTop(new ApplyPowerAction(p,p,new magnumPower(p)));}
+
 
 
     }
