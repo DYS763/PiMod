@@ -15,7 +15,7 @@ public class withered extends AbstractPower {
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
     private static final int N=8;
-    private AbstractCreature source;
+    private final AbstractCreature source;
 
     public withered(AbstractCreature owner,AbstractCreature source,int amount){
         this.name = powerStrings.NAME;

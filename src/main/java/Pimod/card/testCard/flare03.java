@@ -15,7 +15,7 @@ import basemod.abstracts.CustomCard;
 
 public class flare03 extends CustomCard {
     public static final String ID = "flare03";
-    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

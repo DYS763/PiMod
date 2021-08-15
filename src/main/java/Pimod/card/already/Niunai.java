@@ -30,7 +30,7 @@ public class Niunai extends CustomCard{//“extends CustomCard” 继承basemod�
 	//
 	//实例：  “获得 !M! 层 力量 。如果 力量 超过3层，额外获得 [R] 。”;
 
-	private static final int COST = 1;//卡牌的费用。
+	private static final int COST = 0;//卡牌的费用。
 
 	//注：以上声明的五个变量并非强制需要。仅出于代码的美观考虑而写。
 	public Niunai() {

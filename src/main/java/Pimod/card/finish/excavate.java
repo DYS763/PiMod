@@ -17,28 +17,23 @@ import static Pimod.cardActions.returnRandomMineralCard.getUncommonMineralCard;
 * */
 public class excavate extends CustomCard {
     public static final String ID = "excavate";
-    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/shuai_img.png";
-    private static final int COST = 0;
-    private static final int VULNERABLE_AMT = 1;
+    private static final int COST = 1;
 
     public excavate() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.PI_COLOR,
                 CardRarity.UNCOMMON, CardTarget.NONE);
-        this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawCardAction(1));
-        if(this.upgraded){
-            this.addToBot(new MakeTempCardInHandAction(getUncommonMineralCard(),1));
-        }else {
-            this.addToBot(new MakeTempCardInHandAction(getCommonMineralCard(),1));
-        }
+        this.addToBot(new DrawCardAction(this.magicNumber));
+        this.addToBot(new MakeTempCardInHandAction(getUncommonMineralCard(),this.magicNumber));
 
     }
 
@@ -51,6 +46,7 @@ public class excavate extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(1);
         }
     }
 }

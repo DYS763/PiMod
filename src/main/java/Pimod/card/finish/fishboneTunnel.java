@@ -14,12 +14,12 @@ import static Pimod.cardActions.returnRandomMineralCard.getUncommonMineralCard;
 * */
 public class fishboneTunnel extends CustomCard {
     public static final String ID = "fishboneTunnel";
-    private static CardStrings cardStrings;
+    private static final CardStrings cardStrings;
     public static  String NAME;
     public static  String DESCRIPTION;
     public static final String IMG_PATH = "cards/shuai_img.png";
     private static final int COST = 1;
-    private static int UncommonMineralAmt = 1;
+    private static final int UncommonMineralAmt = 1;
     public fishboneTunnel() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.PI_COLOR,
@@ -31,9 +31,9 @@ public class fishboneTunnel extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for(int i=0;i<magicNumber;i++){
-            this.addToBot(new MakeTempCardInHandAction(getCommonMineralCard(),1));
+            this.addToBot(new MakeTempCardInHandAction(getCommonMineralCard(),this.magicNumber));
         }
-        this.addToBot(new MakeTempCardInHandAction(getUncommonMineralCard(),UncommonMineralAmt));
+        this.addToBot(new MakeTempCardInHandAction(getUncommonMineralCard(),this.magicNumber));
     }
 
     @Override
@@ -49,7 +49,7 @@ public class fishboneTunnel extends CustomCard {
         }
     }
     static {
-        cardStrings = CardCrawlGame.languagePack.getCardStrings("fishboneTunnel");
+        cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
         NAME = cardStrings.NAME;
         DESCRIPTION = cardStrings.DESCRIPTION;
     }

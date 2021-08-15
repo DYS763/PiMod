@@ -1,6 +1,8 @@
 package Pimod.card.finish;
 
+import Pimod.actions.allExhaustAction;
 import Pimod.patches.AbstractCardEnum;
+import Pimod.powers.hideAndSeekPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,6 +34,7 @@ public class hideAndSeek extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
 
         this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p,p,new hideAndSeekPower(p)));
     }
 
     public AbstractCard makeCopy() {
@@ -46,6 +49,7 @@ public class hideAndSeek extends CustomCard{
         if (!this.upgraded) {
             this.upgradeName();
             this.isEthereal = false;
+            this.upgradeBaseCost(1);
         }
 
     }

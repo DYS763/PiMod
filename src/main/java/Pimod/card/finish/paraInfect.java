@@ -19,7 +19,7 @@ public class paraInfect extends CustomCard{
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = 1;
+    private static final int COST = 2;
 
 
     public paraInfect() {
@@ -55,7 +55,7 @@ public class paraInfect extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeBaseCost(1);
         }
 
     }

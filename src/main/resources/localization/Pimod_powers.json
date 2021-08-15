@@ -1,22 +1,22 @@
 {
   "withered": {
-    "NAME": "凋零",
+    "NAME": "重创",
     "DESCRIPTIONS": [
-      "达到8层时失去50生命",
+      "达到8层时失去30生命",
       ""
     ]
   },
   "beatBackPower": {
     "NAME": "架势",
     "DESCRIPTIONS": [
-      "反击",
+      "受到攻击时给予攻击者20点伤害",
       ""
     ]
   },
   "cursedPower": {
     "NAME": "诅咒",
     "DESCRIPTIONS": [
-      "啊",
+      "你每打出一张牌将随机获得1层 易伤 、 虚弱 、 脆弱 或失去6生命",
       ""
     ]
   },
@@ -30,8 +30,8 @@
   "sharpenBladePower": {
     "NAME": "打磨利刃",
     "DESCRIPTIONS": [
-      "啊",
-      ""
+      "当你打出攻击牌时，对敌方全体造成",
+      "层重创"
     ]
   },
   "magnumPower": {
@@ -42,23 +42,124 @@
     ]
   },
   "kayaPower": {
-    "NAME": "kaya",
+    "NAME": "慧光",
     "DESCRIPTIONS": [
-      "啊",
+      "每打出3张能力牌，恢复4生命值",
       ""
     ]
   },
   "sangePower": {
-    "NAME": "sange",
+    "NAME": "散华",
     "DESCRIPTIONS": [
-      "啊",
+      "每打出3张技能牌，给予所有敌方单位1层虚弱",
       ""
     ]
   },
   "yashiyaPower": {
-    "NAME": "yashiya",
+    "NAME": "夜叉",
     "DESCRIPTIONS": [
-      "啊",
+      "每打出3张攻击牌，获得1点力量",
+      ""
+    ]
+  },
+
+  "minePower": {
+    "NAME": "采集",
+    "DESCRIPTIONS": [
+      "回合开始时，获得",
+      "张矿物"
+    ]
+  },
+  "thornyHandgardPower": {
+    "NAME": "带刺护甲",
+    "DESCRIPTIONS": [
+      "受到攻击时，给予敌方",
+      "层重创"
+    ]
+  },
+  "efficientPower": {
+    "NAME": "高效利用",
+    "DESCRIPTIONS": [
+      "当你打出0费牌时，抽",
+      "张牌"
+    ]
+  },
+  "skilledPower": {
+    "NAME": "战神形态",
+    "DESCRIPTIONS": [
+      "当你出牌时，打出的牌耗能在本场战斗-1",
+      ""
+    ]
+  },
+  "throughTroublePower": {
+    "NAME": "攻克难关",
+    "DESCRIPTIONS": [
+      "当你受到减益效果时，获得",
+      "层力量"
+    ]
+  },
+  "trashCanPower": {
+    "NAME": "回收",
+    "DESCRIPTIONS": [
+      "回合结束时，消耗最多",
+      "张牌"
+    ]
+  },
+  "breakCardPower": {
+    "NAME": "破极兵刃",
+    "DESCRIPTIONS": [
+      "你打出的下",
+      "张牌将消耗并回复相应能量",
+      ""
+    ]
+  },
+  "polishPower": {
+    "NAME": "锋利",
+    "DESCRIPTIONS": [
+      "你的攻击伤害提升",
+      ""
+    ]
+  },
+  "diaolingPower": {
+    "NAME": "凋零",
+    "DESCRIPTIONS": [
+      "受到",
+      "点伤害，效果来源恢复等量",
+      ""
+    ]
+  },
+  "wellPreparedPower": {
+    "NAME": "准备就绪",
+    "DESCRIPTIONS": [
+      "每打出1张牌，获得",
+      "点经验"
+    ]
+  },
+  "turnOffPower": {
+    "NAME": "熄灯",
+    "DESCRIPTIONS": [
+      "本回合你的经验效果不消耗经验",
+      ""
+    ]
+  },
+  "adaptabilityPower": {
+    "NAME": "适应性",
+    "DESCRIPTIONS": [
+      "受到伤害时，获得",
+      "层经验"
+    ]
+  },
+  "experiencePower": {
+    "NAME": "经验",
+    "DESCRIPTIONS": [
+      "打出攻击牌时，若你打出的上一张牌是攻击牌，消耗3经验额外造成6伤害；打出技能牌时，若你打出的上一张牌是技能牌，失去3经验获得5格挡",
+      ""
+    ]
+  },
+  "hideAndSeekPower": {
+    "NAME": "躲藏",
+    "DESCRIPTIONS": [
+      "下回合无法打出攻击牌",
       ""
     ]
   }

@@ -25,17 +25,15 @@ public class remove extends CustomCard{
     public remove() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.baseBlock = 5;
+        this.baseMagicNumber = 1;
+        this.magicNumber=this.baseMagicNumber;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(AbstractDungeon.player.filledOrbCount()==1){
             this.addToTop(new RemoveAllOrbsAction());
-            if(this.upgraded){
-                this.addToBot(new DrawCardAction(2));
-            }else {
-                this.addToBot(new DrawCardAction(1));
-            }
+                this.addToBot(new DrawCardAction(this.magicNumber));
+
         }
     }
 
@@ -50,6 +48,7 @@ public class remove extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(1);
         }
 
     }

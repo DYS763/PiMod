@@ -16,7 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class doubleDebuff extends AbstractGameAction {
-    private AbstractCreature c;
+    private final AbstractCreature c;
     protected static final Logger logger = LogManager.getLogger(AbstractDungeon.class.getName());
 
     public doubleDebuff(AbstractCreature c) {

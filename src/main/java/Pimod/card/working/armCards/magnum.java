@@ -22,7 +22,7 @@ public class magnum extends CustomCard{
     private static final int COST = 1;
 
     public magnum() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.SPECIAL, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
     }
 

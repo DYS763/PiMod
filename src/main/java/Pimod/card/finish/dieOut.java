@@ -20,11 +20,11 @@ public class dieOut extends AbstractCard {
     public static final String NAME;
     public static final String DESCRIPTION;
     public static final String IMG_PATH = "cards/daji.png";
-    private static final int COST = 2;
+    private static final int COST = 1;
     public static int extra = 0;
     private AbstractCreature c;
     public dieOut() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
         //this.tags.add(CardTags.STARTER_STRIKE);
         //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
         this.baseDamage = 9;
@@ -36,15 +36,9 @@ public class dieOut extends AbstractCard {
         while(var1.hasNext()) {
             AbstractPower a = (AbstractPower)var1.next();
             if (a.type == AbstractPower.PowerType.DEBUFF) {
-                switch (a.ID){
-                    case "Poison" :
-                    case "Weakened":
-                    case "Frail":
-                        extra += a.amount;
-                        break;
-                    default:
-                        break;
-                }
+                extra += a.amount;
+
+
             }
         }
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));

@@ -13,34 +13,38 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import basemod.abstracts.CustomCard;
 
+import java.util.Iterator;
+
 public class diaoling extends CustomCard {
     public static final String ID = "diaoling";
-    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/my_card_img.png";
-    private static final int COST = 0;
+    private static final int COST = 2;
     private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int VULNERABLE_AMT = 1;
+    private static final int VULNERABLE_AMT = 6;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
 
     public diaoling() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.ATTACK, AbstractCardEnum.PI_COLOR,
-                CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
         this.damage=this.baseDamage = ATTACK_DMG;
+        this.exhaust=true;
 
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new withered(m,m,3), 3, true, AbstractGameAction.AttackEffect.NONE));
+        Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+        while(var3.hasNext()) {
+            AbstractMonster mo = (AbstractMonster)var3.next();
+            this.addToBot(new ApplyPowerAction(mo, p, new withered(mo,mo,this.magicNumber), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        }
     }
 
     @Override
@@ -53,7 +57,8 @@ public class diaoling extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_PLUS_DMG);
-            this.upgradeMagicNumber(UPGRADE_PLUS_VULNERABLE);
+            this.upgradeBaseCost(1);
+            this.upgradeMagicNumber(7);
         }
     }
 }

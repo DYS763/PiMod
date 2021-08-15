@@ -20,7 +20,7 @@ public class heavyAttack extends AbstractCard {
     public static final String IMG_PATH = "cards/daji.png";
 
     public heavyAttack() {
-        super("heavyAttack", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super("heavyAttack", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = 6;
         this.baseMagicNumber=2;
         this.damage=baseDamage;

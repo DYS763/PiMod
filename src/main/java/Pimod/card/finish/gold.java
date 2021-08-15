@@ -19,16 +19,16 @@ public class gold extends CustomCard{
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 0;
-    private static int baseGold = 5;
     private static final boolean isMine = true;
     public gold() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseBlock = 5;
+        this.baseMagicNumber = 5;
+        this.magicNumber=this.baseMagicNumber;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainGoldAction(baseGold));
+        this.addToBot(new GainGoldAction(this.magicNumber));
     }
 
     public AbstractCard makeCopy() {
@@ -42,7 +42,7 @@ public class gold extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            baseGold +=5;
+            this.upgradeMagicNumber(5);
         }
 
     }

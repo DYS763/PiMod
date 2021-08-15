@@ -25,7 +25,7 @@ public class lightUp extends CustomCard{
     public lightUp() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.baseBlock = 6;
+        this.baseBlock = 7;
         this.baseMagicNumber=1;
     }
 

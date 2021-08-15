@@ -12,11 +12,10 @@ import basemod.abstracts.CustomCard;
 * */
 public class sorbet extends CustomCard {
     public static final String ID = "sorbet";
-    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/my_card_img.png";
-    private static final int COST = 2;
 
     public sorbet() {
         super(ID, NAME, IMG_PATH, -1, DESCRIPTION,

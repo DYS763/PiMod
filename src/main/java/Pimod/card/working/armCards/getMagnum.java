@@ -1,6 +1,7 @@
 package Pimod.card.working.armCards;
 
 import Pimod.patches.AbstractCardEnum;
+import Pimod.patches.CardTagEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -28,6 +29,7 @@ public class getMagnum extends AbstractCard {
         super(ID, NAME, IMG_PATH, 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
         //this.tags.add(CardTags.STARTER_STRIKE);
         //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
+        this.tags.add(CardTagEnum.Weapon);
         this.baseDamage = 17;
         this.baseMagicNumber = 2;
         this.damage = this.baseDamage;

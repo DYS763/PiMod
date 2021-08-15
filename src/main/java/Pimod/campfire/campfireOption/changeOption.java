@@ -40,7 +40,7 @@ public class changeOption extends AbstractCampfireOption {
     public void update() {
 
         //用于实现不占篝火行动的代码，从崩坠扒下来的
-        float hackScale = (Float) ReflectionHacks.getPrivate(this, AbstractCampfireOption.class, "scale");
+        float hackScale = ReflectionHacks.getPrivate(this, AbstractCampfireOption.class, "scale");
         if (this.hb.hovered) {
             if (!this.hb.clickStarted) {
                 ReflectionHacks.setPrivate(this, AbstractCampfireOption.class, "scale", MathHelper.scaleLerpSnap(hackScale, Settings.scale));

@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class sharpenBlade extends AbstractCard {
     public static final String ID = "sharpenBlade";
     private static final CardStrings cardStrings;
-
+    private static final int COST = 1;
     public sharpenBlade() {
-        super("sharpenBlade", cardStrings.NAME, "red/power/demon_form", 3, cardStrings.DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.NONE);
+        super("sharpenBlade", cardStrings.NAME, "red/power/demon_form", COST, cardStrings.DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = 1;
         this.magicNumber = this.baseMagicNumber;
     }

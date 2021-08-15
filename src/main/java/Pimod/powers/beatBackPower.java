@@ -66,6 +66,4 @@ public class beatBackPower extends AbstractPower {
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
 
-
-
 }

@@ -18,9 +18,7 @@ public class evillyDevote extends CustomCard{
     private static final CardStrings cardStrings;
     public static final String NAME;
     public static final String DESCRIPTION;
-    private static final int COST = 0;
-    private static final boolean isMine = true;
-
+    private static final int COST = 3;
     public evillyDevote() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.SELF);
         this.exhaust = true;
@@ -42,6 +40,7 @@ public class evillyDevote extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeBaseCost(2);
         }
 
     }

@@ -20,7 +20,7 @@ public class sange extends CustomCard{
     public static final String DESCRIPTION;
     private static final int COST = 1;
     public sange() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.PI_COLOR, CardRarity.SPECIAL, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
     }
 

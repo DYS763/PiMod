@@ -12,7 +12,7 @@ import basemod.abstracts.CustomCard;
 
 public class stick extends CustomCard {
     public static final String ID = "stick";
-    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/my_card_img.png";

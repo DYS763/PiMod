@@ -29,6 +29,7 @@ public class exmDefend extends CustomCard{
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, this.block));
+
     }
 
     public AbstractCard makeCopy() {

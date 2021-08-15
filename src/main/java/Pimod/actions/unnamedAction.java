@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class unnamedAction extends AbstractGameAction {
-    private DamageInfo info;
+    private final DamageInfo info;
 
     public unnamedAction(AbstractCreature target, DamageInfo info) {
         this.actionType = ActionType.BLOCK;

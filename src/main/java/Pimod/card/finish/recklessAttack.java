@@ -25,7 +25,7 @@ public class recklessAttack extends AbstractCard {
     private static final int UPGRADE_PLUS_DMG = 3;
 
     public recklessAttack() {
-        super("recklessAttack", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
+        super("recklessAttack", NAME, "cards/daji.png", COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
         //this.tags.add(CardTags.STARTER_STRIKE);
         //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
         this.baseDamage = 7;
@@ -33,7 +33,6 @@ public class recklessAttack extends AbstractCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard card;
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         if(p.hasOrb()){
             this.addToBot(new RemoveAllOrbsAction());
@@ -52,7 +51,7 @@ public class recklessAttack extends AbstractCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(3);
+            this.upgradeDamage(5);
         }
 
     }

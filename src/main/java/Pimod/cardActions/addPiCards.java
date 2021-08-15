@@ -20,7 +20,7 @@ public class addPiCards {
 
         while(var2.hasNext()) {
             Map.Entry<String, AbstractCard> c = (Map.Entry)var2.next();
-            AbstractCard card = (AbstractCard)c.getValue();
+            AbstractCard card = c.getValue();
             if (card.color == AbstractCardEnum.PI_DERIVATIONS &&
                     card.rarity != AbstractCard.CardRarity.BASIC &&
                     card.rarity != AbstractCard.CardRarity.SPECIAL &&

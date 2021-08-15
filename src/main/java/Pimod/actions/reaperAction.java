@@ -18,8 +18,8 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class reaperAction extends AbstractGameAction {
-    private int increaseHpAmount;
-    private DamageInfo info;
+    private final int increaseHpAmount;
+    private final DamageInfo info;
     private static final float DURATION = 0.1F;
 
     public reaperAction(AbstractCreature target, DamageInfo info, int increaseHPAmount) {
@@ -34,7 +34,7 @@ public class reaperAction extends AbstractGameAction {
         if (this.duration == 0.1F && this.target != null) {
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.NONE));
             this.target.damage(this.info);
-            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead && !this.target.hasPower("Minion")) {
+            if ((this.target.isDying || this.target.currentHealth <= 0) && !this.target.halfDead && !this.target.hasPower("Minion")) {
                 AbstractDungeon.player.heal(this.increaseHpAmount, true);
                 if (this.target instanceof Donu) {
                     UnlockTracker.unlockAchievement("DONUT");

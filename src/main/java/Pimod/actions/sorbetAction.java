@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class sorbetAction extends AbstractGameAction {
     private boolean freeToPlayOnce = false;
-    private boolean upgraded;
-    private AbstractPlayer p;
-    private int energyOnUse;
+    private final boolean upgraded;
+    private final AbstractPlayer p;
+    private final int energyOnUse;
 
     public sorbetAction(AbstractPlayer p, boolean freeToPlayOnce, int energyOnUse, boolean upgraded) {
         this.p = p;

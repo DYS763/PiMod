@@ -29,7 +29,7 @@ public class doubleEdgedSword extends AbstractCard {
         //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
         baseDamage = 12;
         damage = baseDamage;
-        baseMagicNumber = 4;
+        baseMagicNumber = 5;
         this.magicNumber = baseMagicNumber;
     }
 
@@ -50,7 +50,7 @@ public class doubleEdgedSword extends AbstractCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(4);
+            this.upgradeDamage(3);
             this.upgradeMagicNumber(2);
         }
 

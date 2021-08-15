@@ -24,6 +24,7 @@ public class Defend_PI extends CustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
         this.baseBlock = 5;
+        this.block=this.baseBlock;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

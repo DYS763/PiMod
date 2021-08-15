@@ -20,8 +20,8 @@ public class emptyOrb extends AbstractOrb {
     private static final OrbStrings orbString;
     public static final String[] DESC;
     private float vfxTimer = 1.0F;
-    private float vfxIntervalMin = 0.1F;
-    private float vfxIntervalMax = 0.4F;
+    private final float vfxIntervalMin = 0.1F;
+    private final float vfxIntervalMax = 0.4F;
     private static final float ORB_WAVY_DIST = 0.04F;
     private static final float PI_4 = 12.566371F;
 

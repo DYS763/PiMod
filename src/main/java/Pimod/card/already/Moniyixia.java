@@ -37,10 +37,11 @@ public class Moniyixia extends CustomCard{//“extends CustomCard” 继承basem
 	
 	//注：以上声明的五个变量并非强制需要。仅出于代码的美观考虑而写。
 	public Moniyixia() {
-		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
-		this.baseDamage = 1;
+		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
+		this.baseDamage = 12;
 		this.baseMagicNumber = 3;
 		this.magicNumber = this.baseMagicNumber;
+		this.exhaust=true;
 	}
 
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -79,6 +80,7 @@ public class Moniyixia extends CustomCard{//“extends CustomCard” 继承basem
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.upgradeMagicNumber(2);
+			this.upgradeDamage(5);
 		}
 
 	}

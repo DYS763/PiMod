@@ -28,7 +28,7 @@ public class iaido extends CustomCard{
 
     public iaido() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseBlock = 6;
+        this.baseBlock = 9;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -59,7 +59,7 @@ public class iaido extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(6);
+            this.upgradeBlock(5);
         }
 
     }

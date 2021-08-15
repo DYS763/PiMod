@@ -26,15 +26,15 @@ public class gambling extends CustomCard{
     public gambling() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = 3;
-        this.baseMagicNumber = 4;
-        this.magicNumber =baseMagicNumber;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new RandomizeHandCostAction());
-        for(int i = 0; i < this.magicNumber; ++i) {
+            this.addToBot(new RandomizeHandCostAction());
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        }
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
     }
 
     public AbstractCard makeCopy() {
@@ -45,8 +45,7 @@ public class gambling extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(1);
-            this.upgradeMagicNumber(1);
+            this.upgradeDamage(2);
         }
 
     }

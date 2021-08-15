@@ -29,9 +29,9 @@ public class goldenApple extends CustomRelic {
         //使用内置图标就不需要导入了 想自定义可以抄其他的mod或者看教程
         super(ID, "crown.png", RelicTier.RARE, LandingSound.CLINK);
     }
-    public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
-        options.add(new changeOption(true));
-    }
+    //public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
+    //    options.add(new changeOption(true));
+    //}
     /**
      * 在战斗开始时触发
      */

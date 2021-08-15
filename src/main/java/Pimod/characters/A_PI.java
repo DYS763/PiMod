@@ -47,11 +47,11 @@ public class A_PI extends CustomPlayer {
     private static final int ASCENSION_MAX_HP_LOSS = 5;
     //可能是资源路径之类的东西
     public A_PI(String name) {
-        super(name, PIClassEnum.A_PI, ORB_TEXTURES, "img/UI/energyBlueVFX.png", LAYER_SPEED, (String)null, (String)null);
+        super(name, PIClassEnum.A_PI, ORB_TEXTURES, "img/UI/energyBlueVFX.png", LAYER_SPEED, null, null);
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
         logger.info("init Marisa");
-        this.initializeClass((String)null, "img/char/Marisa/shoulder2.png", "img/char/Marisa/shoulder1.png", "img/char/Marisa/fallen.png", this.getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
+        this.initializeClass(null, "img/char/Marisa/shoulder2.png", "img/char/Marisa/shoulder1.png", "img/char/Marisa/fallen.png", this.getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
         this.loadAnimation("img/char/Marisa/MarisaModelv3.atlas", "img/char/Marisa/MarisaModelv3.json", 2.0F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -66,6 +66,16 @@ public class A_PI extends CustomPlayer {
 
 
         retVal.add("Strike_PI");
+        retVal.add("Strike_PI");
+        retVal.add("Strike_PI");
+        retVal.add("Strike_PI");
+        retVal.add("Strike_PI");
+        retVal.add("Defend_PI");
+        retVal.add("Defend_PI");
+        retVal.add("Defend_PI");
+        retVal.add("Defend_PI");
+        retVal.add("Defend_PI");
+        retVal.add("trainToAttack");
         // 12张
 
         return retVal;
