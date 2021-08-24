@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Pimod.actions.meidelao;
 
-
+//双倍debuff  未完成
 public class quede extends CustomCard{
 
     public static final String ID = "quede";

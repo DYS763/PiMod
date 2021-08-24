@@ -23,7 +23,7 @@ public class diamond extends CustomCard{
     private static int powerAmt = 3;
     private static final boolean isMine = true;
     public diamond() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.SELF);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.RARE, CardTarget.SELF);
         this.exhaust = true;
     }
 

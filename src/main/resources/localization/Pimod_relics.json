@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "每次战斗开始获得1费用"
     ]
+  },
+  "bread": {
+    "NAME": "面包",
+    "FLAVOR": "太好了！",
+    "DESCRIPTIONS": [
+      "右击恢复2点生命值"
+    ]
   }
 }

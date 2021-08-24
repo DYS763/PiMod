@@ -7,7 +7,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -31,9 +30,9 @@ public class boomArrowOrb extends AbstractOrb {
     private static final OrbStrings orbString;
     public static final String[] DESC;
     private float vfxTimer = 1.0F;
-    private float vfxIntervalMin = 0.1F;
-    private float vfxIntervalMax = 0.4F;
-    private int baseDamage = 6;
+    private final float vfxIntervalMin = 0.1F;
+    private final float vfxIntervalMax = 0.4F;
+    private final int baseDamage = 6;
     public boomArrowOrb() {
         this.ID = "Plasma";
         this.img = ImageMaster.ORB_PLASMA;
@@ -101,7 +100,7 @@ public class boomArrowOrb extends AbstractOrb {
     }
 
     public AbstractOrb makeCopy() {
-        return new testOrb();
+        return new emptyOrb();
     }
 
     static {

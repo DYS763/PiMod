@@ -21,13 +21,14 @@ public class quartz extends CustomCard{
     private static final int COST = 0;
     private static final boolean isMine = true;
     public quartz() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.SELF);
-        this.baseDraw = 1;
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.COMMON, CardTarget.SELF);
+        this.baseMagicNumber = 1;
+        this.magicNumber= this.baseMagicNumber;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawCardAction(p,baseDraw));
+        this.addToBot(new DrawCardAction(p,this.magicNumber));
     }
 
     public AbstractCard makeCopy() {
@@ -41,7 +42,7 @@ public class quartz extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.baseDraw++;
+            this.upgradeMagicNumber(1);
         }
 
     }

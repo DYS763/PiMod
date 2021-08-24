@@ -24,7 +24,7 @@ public class emerald extends CustomCard{
     /*已完成 绿宝石
     * */
     public emerald() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.RARE, CardTarget.SELF);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.RARE, CardTarget.SELF);
         this.baseBlock = 5;
         this.exhaust = true;
     }

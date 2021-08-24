@@ -20,31 +20,25 @@ public class coal extends CustomCard{
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 0;
-    private static int energyAmt = 1;
     private static final boolean isMine = true;
     public coal() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseBlock = 5;
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.baseMagicNumber=1;
+        this.magicNumber=this.baseMagicNumber;
         this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, energyAmt), energyAmt));
+        this.addToBot(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber), this.magicNumber));
     }
 
     public AbstractCard makeCopy() {
         return new coal();
     }
 
-    public boolean isDefend() {
-        return true;
-    }
-
     public void upgrade() {
-        if (!this.upgraded) {
-            energyAmt++;
-        }
-
+        upgradeName();
+        this.upgradeMagicNumber(1);
     }
 
     static {

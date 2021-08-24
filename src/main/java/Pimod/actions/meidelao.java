@@ -11,7 +11,7 @@ import java.util.Iterator;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class meidelao extends AbstractGameAction {
-    private AbstractCreature c;
+    private final AbstractCreature c;
 
     public meidelao(AbstractCreature c) {
         this.c = c;

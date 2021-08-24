@@ -15,7 +15,7 @@ public class withered extends AbstractPower {
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
     private static final int N=8;
-    private AbstractCreature source;
+    private final AbstractCreature source;
 
     public withered(AbstractCreature owner,AbstractCreature source,int amount){
         this.name = powerStrings.NAME;
@@ -39,6 +39,8 @@ public class withered extends AbstractPower {
             this.addToTop(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
         }
     }
+
+    
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }

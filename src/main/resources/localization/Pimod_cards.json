@@ -1,65 +1,15 @@
 {
-  "flare": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 ,  测试关键字  。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
 
   "Strike_PI": {
-    "NAME": "api打击",
-    "DESCRIPTION": "测试用api打击",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害",
+    "UPGRADE_DESCRIPTION": " 造成 !D! 点伤害。"
   },
 
   "Defend_PI": {
-    "NAME": "api防御",
-    "DESCRIPTION": "测试用api防御",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare1": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础， 测试关键字 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare2": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare3": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare01": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare02": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare03": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare11": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare12": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
-  },
-  "flare13": {
-    "NAME": "测试",
-    "DESCRIPTION": "测试基础 。",
-    "UPGRADE_DESCRIPTION": " 测试升级。"
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点格挡",
+    "UPGRADE_DESCRIPTION": " 获得 !B! 点格挡"
   },
   "Furou": {
     "NAME": "腐肉",
@@ -68,13 +18,13 @@
   },
   "Yinggangguangxian": {
     "NAME": "硬刚光线",
-    "DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 虚弱 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 虚弱 "
+    "DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 虚弱 ,如果敌人有 易伤 状态，抽1张牌",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 虚弱 ,如果敌人有 易伤 状态，抽1张牌 "
   },
   "Youjiguangxian": {
     "NAME": "游击光线",
-    "DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 易伤 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 易伤 "
+    "DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 易伤 ，如果敌人有 虚弱 状态，抽一张牌",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，造成 !M! 层 易伤 ，如果敌人有 虚弱 状态，抽一张牌 "
   },
   "Chengzhineifire": {
     "NAME": "城之内Fire",
@@ -88,14 +38,440 @@
   },
   "Moniyixia": {
     "NAME": "摸你一下",
-    "DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响"
+    "DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响 消耗 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，受到 !M! 倍 力量 影响 消耗 "
   },
   "meide": {
     "NAME": "美德老",
     "DESCRIPTION": "清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。",
     "UPGRADE_DESCRIPTION": " 清除怪物所有debuff，每清除一类，回复1费并抽一张卡 。"
   },
+  "coal": {
+    "NAME": "煤炭",
+    "DESCRIPTION": "下回合获得 !M! 点能量",
+    "UPGRADE_DESCRIPTION": " 下回合获得 !M! 点能量"
+  },
+  "diamond": {
+    "NAME": "钻石",
+    "DESCRIPTION": "获得 !M! 层 多层护甲 ",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 多层护甲 "
+  },
+  "emerald": {
+    "NAME": "绿宝石",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "glowStone": {
+    "NAME": "萤石",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "gold": {
+    "NAME": "金",
+    "DESCRIPTION": "获得 !M! 金币 ",
+    "UPGRADE_DESCRIPTION": "获得 !M! 金币 "
+  },
+  "obsidian": {
+    "NAME": "黑曜石",
+    "DESCRIPTION": "1",
+    "UPGRADE_DESCRIPTION": " 1"
+  },
+  "quartz": {
+    "NAME": "石英",
+    "DESCRIPTION": "抽 !M! 张牌",
+    "UPGRADE_DESCRIPTION": " 抽 !M! 张牌"
+  },
+  "redStone": {
+    "NAME": "红石",
+    "DESCRIPTION": "获得 !M! 点能量",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点能量"
+  },
+  "steel": {
+    "NAME": "铁",
+    "DESCRIPTION": "获得 !B! 点格挡",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡"
+  },
+  "stone": {
+    "NAME": "石头",
+    "DESCRIPTION": "造成 !D! 点伤害",
+    "UPGRADE_DESCRIPTION": " 造成 !D! 点伤害"
+  },
+  "getBaton": {
+    "NAME": "接力棒",
+    "DESCRIPTION": "装备接力棒",
+    "UPGRADE_DESCRIPTION": "装备接力棒"
+  },
+  "baton": {
+    "NAME": "接力棒",
+    "DESCRIPTION": "抽2张牌，装备接力棒",
+    "UPGRADE_DESCRIPTION": " 抽2张牌，装备接力棒"
+  },
+  "fishboneTunnel": {
+    "NAME": "鱼骨矿道",
+    "DESCRIPTION": "获得 !M! 张随机矿物",
+    "UPGRADE_DESCRIPTION": "获得 !M! 张随机矿物"
+  },
+  "iaido": {
+    "NAME": "居合",
+    "DESCRIPTION": "获得 !B! 点格挡，结束你的回合，架势。",
+    "UPGRADE_DESCRIPTION": " 获得 !B! 点格挡，结束你的回合，架势。"
+  },
+  "reaper": {
+    "NAME": "收割者镰刀",
+    "DESCRIPTION": "造成 !D! 点伤害，斩杀时恢复 !M! 生命,消耗",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，斩杀时恢复 !M! 生命,消耗"
+  },
+  "remove": {
+    "NAME": "徒手上阵",
+    "DESCRIPTION": "移除你的武器，抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": " 移除你的武器，抽 !M! 张牌。"
+  },
+  "excavate": {
+    "NAME": "挖掘",
+    "DESCRIPTION": "抽 !M! 张牌，获得 !M! 张随机矿物",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌，获得 !M! 张随机矿物"
+  },
+  "evillyDevote": {
+    "NAME": "邪恶献身",
+    "DESCRIPTION": "使当前手牌耗能为0，每打出一张牌，受到随机减益效果或失去6生命",
+    "UPGRADE_DESCRIPTION": "使当前手牌耗能为0，每打出一张牌，受到随机减益效果或失去6生命"
+  },
+  "panicAttack": {
+    "NAME": "慌乱推击",
+    "DESCRIPTION": "造成 !D! 点伤害，若你没有武器，则再次造成 !D! 点伤害",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若你没有武器，则再次造成 !D! 点伤害"
+  },
+  "temporaryWeapon": {
+    "NAME": "临时武器",
+    "DESCRIPTION": "造成 !D! 点伤害，装备木棍",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，装备木棍"
+  },
+  "gambling": {
+    "NAME": "羸弱赌徒",
+    "DESCRIPTION": "随机化你手牌的耗能。造成 !D! 点伤害4次。",
+    "UPGRADE_DESCRIPTION": "随机化你手牌的耗能。造成 !D! 点伤害4次。"
+  },
+  "sorbet": {
+    "NAME": "草莓冰沙",
+    "DESCRIPTION": "在你的手牌中加入X张奇迹。消耗，保留。",
+    "UPGRADE_DESCRIPTION": "在你的手牌中加入X+1张奇迹。消耗，保留。"
+  },
+  "recklessAttack": {
+  "NAME": "莽撞一击",
+  "DESCRIPTION": "造成 !D! 点伤害，如果你拥有武器，移除并获得2点能量。",
+  "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，如果你拥有武器，移除并获得2点能量。"
+},
+  "paraInfect": {
+    "NAME": "寄染",
+    "DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。",
+    "UPGRADE_DESCRIPTION": "将你的虚弱、易伤、易碎，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "piDraw": {
+    "NAME": "抽牌",
+    "DESCRIPTION": "抽 !M! 张牌 ",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌"
+  },
+  "piUpgrade": {
+    "NAME": "升级",
+    "DESCRIPTION": "升级1张手牌",
+    "UPGRADE_DESCRIPTION": "升级1张手牌，保留升级效果"
+  },
+  "piWeaken": {
+    "NAME": "虚弱",
+    "DESCRIPTION": "给予随机一名敌人 !M! 层虚弱",
+    "UPGRADE_DESCRIPTION": "给予随机一名敌人 !M! 层虚弱"
+  },
+  "watchForChance": {
+    "NAME": "静观其变",
+    "DESCRIPTION": "选择：抽1张牌；升级1张手牌；给予随机一名敌人1层虚弱",
+    "UPGRADE_DESCRIPTION": "选择：抽 !M! 张牌；升级1张手牌；给予随机一名敌人 !M! 层虚弱"
+  },
+  "allChoice": {
+    "NAME": "全做  本卡未采用",
+    "DESCRIPTION": "将你的 虚弱 、 易伤 、 易碎 ，转化为相应层数的敏捷、力量、金属化。消耗。",
+    "UPGRADE_DESCRIPTION": "将你的 虚弱 、 易伤 、 易碎 ，转化为相应层数的敏捷、力量、金属化。消耗。"
+  },
+  "heavyAttack": {
+    "NAME": "猛击",
+    "DESCRIPTION": "造成 !D! 点伤害，!M! 层 重创 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，!M! 层 重创 。"
+  },
+  "lightUp": {
+    "NAME": "亮度14",
+    "DESCRIPTION": "获得 !B! 点护甲，获得 !M! 张矿物牌。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点护甲，获得 !M! 张矿物牌。"
+  },
+  "sharpenBlade": {
+    "NAME": "打磨利刃",
+    "DESCRIPTION": "每使用一张攻击牌，给予敌方全体 !M! 层重创。",
+    "UPGRADE_DESCRIPTION": "每使用一张攻击牌，给予敌方全体 !M! 层重创。"
+  },
+  "hitOnWound": {
+    "NAME": "落井下石",
+    "DESCRIPTION": "造成 !D! 点伤害，如果敌人有重伤状态，获得1费并且抽一张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，如果敌人有重伤状态，获得1费并且抽一张牌。"
+  },
+  "doubleEdgedSword": {
+    "NAME": "双刃剑",
+    "DESCRIPTION": "对敌方全体造成 !D! 点伤害和 !M! 层重创,受到 !M! 层重创",
+    "UPGRADE_DESCRIPTION": "对敌方全体造成 !D! 点伤害和 !M! 层重创,受到 !M! 层重创"
+  },
+  "poleVault": {
+    "NAME": "撑杆跳",
+    "DESCRIPTION": "获得 !B! 点格挡，!M! 点临时敏捷",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，!M! 点临时敏捷"
+  },
+  "getMagnum": {
+  "NAME": "马格南之鹰",
+  "DESCRIPTION": "造成17点伤害，下回合抽卡-1",
+  "UPGRADE_DESCRIPTION": "造成17点伤害，下回合抽卡-1"
+},
+  "magnum": {
+    "NAME": "马格南",
+    "DESCRIPTION": "获得9点格挡，1点敏捷",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "chooseWeapon": {
+    "NAME": "选择武器",
+    "DESCRIPTION": "选择：装备散华；装备夜叉；装备慧光",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "kaya": {
+    "NAME": "慧光",
+    "DESCRIPTION": "每打出3张能力牌，恢复4生命值",
+    "UPGRADE_DESCRIPTION": "每打出3张能力牌，恢复4生命值"
+  },
+  "sange": {
+    "NAME": "散华",
+    "DESCRIPTION": "每打出3张技能牌，给予所有敌方单位1层虚弱",
+    "UPGRADE_DESCRIPTION": "每打出3张技能牌，给予所有敌方单位1层虚弱"
+  },
+  "yashiya": {
+    "NAME": "夜叉",
+    "DESCRIPTION": "每打出3张攻击牌，获得1点力量",
+    "UPGRADE_DESCRIPTION": "每打出3张攻击牌，获得1点力量"
+  },
+  "getKaya": {
+    "NAME": "慧光",
+    "DESCRIPTION": "每打出3张能力牌，恢复4生命值",
+    "UPGRADE_DESCRIPTION": "每打出3张能力牌，恢复4生命值"
+  },
+  "getSange": {
+    "NAME": "散华",
+    "DESCRIPTION": "每打出3张技能牌，给予所有敌方单位1层虚弱",
+    "UPGRADE_DESCRIPTION": "每打出3张技能牌，给予所有敌方单位1层虚弱"
+  },
+  "getYashiya": {
+    "NAME": "夜叉",
+    "DESCRIPTION": "每打出3张攻击牌，获得1点力量",
+    "UPGRADE_DESCRIPTION": "每打出3张攻击牌，获得1点力量"
+  },
+  "mine": {
+  "NAME": "采集",
+  "DESCRIPTION": "回合开始时，获得 !M! 张矿物",
+  "UPGRADE_DESCRIPTION": "回合开始时，获得 !M! 张矿物"
+},
+  "completelyUsed": {
+    "NAME": "completelyUsed    有bug不会修",
+    "DESCRIPTION": "将消耗掉的卡返回自己手中",
+    "UPGRADE_DESCRIPTION": "获得13点格挡，2点敏捷"
+  },
+  "H3AD": {
+    "NAME": "H3AD",
+    "DESCRIPTION": "造成 !D! 点伤害X次，可以多次升级",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害X次，可以多次升级"
+  },
+  "featherFan": {
+    "NAME": "孔雀羽毛扇",
+    "DESCRIPTION": "获得!B!点格挡，消耗最多 !M! 张牌",
+    "UPGRADE_DESCRIPTION": "获得!B!点格挡，消耗最多 !M! 张牌"
+  },
+  "efficientlyUse": {
+    "NAME": "高效利用",
+    "DESCRIPTION": "当你打出0费牌时，抽1张牌",
+    "UPGRADE_DESCRIPTION": "当你打出0费牌时，抽1张牌"
+  },
+  "thornyHandgard": {
+    "NAME": "带刺护甲",
+    "DESCRIPTION": "当你受到伤害时，给予目标1层重创",
+    "UPGRADE_DESCRIPTION": "当你受到伤害时，给予目标1层重创"
+  },
+  "skilledForm": {
+    "NAME": "战神形态",
+    "DESCRIPTION": "当你出牌时，该牌耗能在本次战斗中-1",
+    "UPGRADE_DESCRIPTION": "当你出牌时，该牌耗能在本次战斗中-1"
+  },
+  "multiplexing": {
+    "NAME": "复用",
+    "DESCRIPTION": "获得 !B! 点防御，被消耗时抽 !M! 张卡",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点防御，被消耗时抽 !M! 张卡"
+  },
+  "goodMeal": {
+    "NAME": "大餐！",
+    "DESCRIPTION": "获得3点能量，被消耗时获得3点能量",
+    "UPGRADE_DESCRIPTION": "获得3点能量，被消耗时获得3点能量"
+  },
+  "throughTrouble": {
+    "NAME": "攻克难关",
+    "DESCRIPTION": "当你受到减益效果时，获得 !M! 层力量",
+    "UPGRADE_DESCRIPTION": "当你受到减益效果时，获得 !M! 层力量"
+  },
+  "fightMemory": {
+    "NAME": "格斗技巧",
+    "DESCRIPTION": "获得 !B! +X点格挡(X为你已经消耗的牌的数量)",
+    "UPGRADE_DESCRIPTION": "获得 !B! +X点格挡(X为你已经消耗的牌的数量)"
+  },
+  "sweepingBlade": {
+    "NAME": "横扫之刃",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，!M! 点重伤",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，!M! 点重伤"
+  },
+  "endlessArrow": {
+    "NAME": "无尽箭矢",
+    "DESCRIPTION": "造成 !D! 点伤害，被消耗时，对所有敌人造成 !D! 点伤害， 无限 ",
+    "UPGRADE_DESCRIPTION": "造成 !B! 点伤害，被消耗时，对所有敌人造成 !D! 点伤害， 无限 "
+  },
+  "livingArmor": {
+  "NAME": "活护腕",
+  "DESCRIPTION": "获得 !B! 点格挡，被消耗时，获得 !M! 点格挡, 无限",
+  "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，被消耗时，获得 !M! 点格挡, 无限"
+},
+  "trashCan": {
+    "NAME": "垃圾桶",
+    "DESCRIPTION": "回合结束时，消耗最多 !M! 张牌",
+    "UPGRADE_DESCRIPTION": "回合结束时，消耗最多 !M! 张牌"
+  },
+  "leapOfFaith": {
+    "NAME": "信仰之跃",
+    "DESCRIPTION": "获得1层易伤，抽 !B! 张牌 ",
+    "UPGRADE_DESCRIPTION": "获得1层易伤，抽 !B! 张牌 "
+  },
+  "adaptToChanging": {
+    "NAME": "临机应变",
+    "DESCRIPTION": "获得 !M! 点格挡，如果身上存在减益效果，则额外获得 !M! 点格挡",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点格挡，如果身上存在减益效果，则额外获得 !M! 点格挡"
+  },
+  "breakCard": {
+    "NAME": "破极兵刃",
+    "DESCRIPTION": "你打出的下 !M! 张牌将消耗并回复相应的能量",
+    "UPGRADE_DESCRIPTION": "你打出的下 !M! 张牌将消耗并回复相应的能量"
+  },
+  "demonPoison": {
+    "NAME": "魔王药剂",
+    "DESCRIPTION": "给予 !M! 层凋零，消耗",
+    "UPGRADE_DESCRIPTION": "给予 !M! 层凋零，消耗"
+  },
+  "polish": {
+  "NAME": "打磨",
+  "DESCRIPTION": "获得 !M! 层锋利",
+  "UPGRADE_DESCRIPTION": "获得 !M! 层锋利"
+},
+  "enchant": {
+    "NAME": "附魔",
+    "DESCRIPTION": "只有 经验 大于8时才能打出，在使1张手牌获得永久升级，消耗",
+    "UPGRADE_DESCRIPTION": "只有 经验 大于8时才能打出，在使1张手牌获得永久升级，消耗"
+  },
+  "wellPrepared": {
+    "NAME": "准备就绪",
+    "DESCRIPTION": "抽 !M! 张牌，本回合你每打出一张牌，获得 !M! 层 经验 ",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌，本回合你每打出一张牌，获得 !M! 层 经验 "
+  },
+  "intuition": {
+    "NAME": "超人直觉",
+    "DESCRIPTION": "将你的 经验 翻倍， 消耗 ",
+    "UPGRADE_DESCRIPTION": "将你的 经验 翻三倍， 消耗 "
+  },
+  "trainToAttack": {
+    "NAME": "攻击训练",
+    "DESCRIPTION": "造成 !D! 点伤害， 获得 !M! 层经验",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害， 获得 !M! 层经验"
+  },
+  "holdShield": {
+    "NAME": "持盾",
+    "DESCRIPTION": "获得 !B! 点格挡，获得 !M! 点经验",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，获得 !M! 点经验"
+  },
+  "farawayMemory": {
+    "NAME": "远古记忆",
+    "DESCRIPTION": "获得 !M! 层经验",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层经验"
+  },
+  "turnOff": {
+    "NAME": "熄灯",
+    "DESCRIPTION": "造成 !D! 点伤害，本回合的经验效果不会消耗 经验 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，本回合的经验效果不会消耗 经验 "
+  },
+  "oldOne": {
+    "NAME": "一招鲜",
+    "DESCRIPTION": "造成 !D! 点伤害，经验在此卡上发挥3倍效果",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，经验在此卡上发挥5倍效果"
+  },
+  "quickDefense": {
+    "NAME": "应急防御",
+    "DESCRIPTION": "失去所有经验层数，获得经验层数3倍的格挡",
+    "UPGRADE_DESCRIPTION": "失去所有经验层数，获得经验层数5倍的格挡"
+  },
+  "daaaaash": {
+    "NAME": "疾跑",
+    "DESCRIPTION": "失去 !B! 层经验，抽 !M! 张牌",
+    "UPGRADE_DESCRIPTION": "失去 !B! 层经验，抽 !M! 张牌"
+  },
+  "adaptability": {
+    "NAME": "适应性",
+    "DESCRIPTION": "每当你受到攻击时，获得 !M! 层经验",
+    "UPGRADE_DESCRIPTION": "每当你受到攻击时，获得 !M! 层经验"
+  },
+  "camp": {
+    "NAME": "扎营",
+    "DESCRIPTION": "若你的经验层数大于8，每8层经验转化为1点能量，否则，获得4层经验",
+    "UPGRADE_DESCRIPTION": "若你的经验层数大于8，每8层经验转化为1点能量，否则，获得4层经验"
+  },
+  "wellTrained": {
+    "NAME": "训练有素",
+    "DESCRIPTION": "选择：每4层经验转化为力量；每4层经验转化为敏捷",
+    "UPGRADE_DESCRIPTION": "选择：每4层经验转化为力量；每4层经验转化为敏捷"
+  },
+  "experienceRepair": {
+    "NAME": "经验修补",
+    "DESCRIPTION": "获得 !B! 点格挡，第一次打出此卡时，移除所有经验层数，并将其转化为此卡的基础数值",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，第一次打出此卡时，移除所有经验层数，并将其转化为此卡的基础数值"
+  },
+  "turnDexterity": {
+    "NAME": "转换敏捷",
+    "DESCRIPTION": "每4层经验转化为敏捷",
+    "UPGRADE_DESCRIPTION": "每4层经验转化为敏捷"
+  },
+  "turnStrength": {
+    "NAME": "转换力量",
+    "DESCRIPTION": "每4层经验转化为力量",
+    "UPGRADE_DESCRIPTION": "每4层经验转化为力量"
+  },
+  "hideAndSeek": {
+    "NAME": "躲猫猫",
+    "DESCRIPTION": "获得1层无实体，下回合无法使用攻击牌",
+    "UPGRADE_DESCRIPTION": "获得1层无实体，下回合无法使用攻击牌"
+  },  "diaoling": {
+  "NAME": "血月",
+  "DESCRIPTION": "给予敌方全体 !M! 点重创， 消耗 ",
+  "UPGRADE_DESCRIPTION": "给予敌方全体 !M! 点重创， 消耗 "
+},
+  "dieOut": {
+    "NAME": "抹杀",
+    "DESCRIPTION": "造成 !D! +X点伤害,X为敌人减益效果层数之和 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! +X点伤害,X为敌人减益效果层数之和 "
+  },
+
+
+
+
+
+
+
+
+
+
+
+
   "extendstest1": {
     "NAME": "衍生牌测试",
     "DESCRIPTION": "1,uncommon",
@@ -135,10 +511,6 @@
   "NAME": "衍生牌测试",
   "DESCRIPTION": "133,rare",
   "UPGRADE_DESCRIPTION": " 1"
-},  "diaoling": {
-  "NAME": "debuff测试",
-  "DESCRIPTION": "133,rare",
-  "UPGRADE_DESCRIPTION": " 1"
 },"quede": {
   "NAME": "debuff翻倍测试",
   "DESCRIPTION": "133,rare",
@@ -148,56 +520,5 @@
     "NAME": "充能球测试",
     "DESCRIPTION": "133,rare",
     "UPGRADE_DESCRIPTION": " 1"
-  },
-  "coal": {
-    "NAME": "煤炭",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "diamond": {
-    "NAME": "钻石",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "emerald": {
-    "NAME": "绿宝石",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "glowStone": {
-    "NAME": "萤石",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "gold": {
-    "NAME": "金",
-    "DESCRIPTION": "退出游戏",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "obsidian": {
-    "NAME": "黑曜石",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "quartz": {
-    "NAME": "石英",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "redStone": {
-    "NAME": "红石",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "steel": {
-    "NAME": "铁",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
-  },
-  "stone": {
-    "NAME": "石头",
-    "DESCRIPTION": "1",
-    "UPGRADE_DESCRIPTION": " 1"
   }
-
 }

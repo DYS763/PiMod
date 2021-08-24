@@ -1,6 +1,6 @@
 package Pimod.card.testCard;
 
-import Pimod.armOrbs.testOrb;
+import Pimod.armOrbs.emptyOrb;
 import Pimod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
@@ -15,7 +15,7 @@ import basemod.abstracts.CustomCard;
 
 public class testForOrb extends CustomCard {
     public static final String ID = "testForOrb";
-    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -40,7 +40,7 @@ public class testForOrb extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToBot(new ChannelAction(new testOrb()));
+        this.addToBot(new ChannelAction(new emptyOrb()));
     }
 
     @Override

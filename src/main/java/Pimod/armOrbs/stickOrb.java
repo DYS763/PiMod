@@ -1,5 +1,6 @@
 package Pimod.armOrbs;
 import Pimod.card.testCard.testForOrb;
+import Pimod.card.working.stick;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -29,13 +30,13 @@ public class stickOrb extends AbstractOrb {
     private static final OrbStrings orbString;
     public static final String[] DESC;
     private float vfxTimer = 1.0F;
-    private float vfxIntervalMin = 0.1F;
-    private float vfxIntervalMax = 0.4F;
+    private final float vfxIntervalMin = 0.1F;
+    private final float vfxIntervalMax = 0.4F;
     private static final float ORB_WAVY_DIST = 0.04F;
     private static final float PI_4 = 12.566371F;
 
     public stickOrb() {
-        this.ID = "Plasma";
+        this.ID = "stickOrb";
         this.img = ImageMaster.ORB_PLASMA;
         this.name = orbString.NAME;
         this.baseEvokeAmount = 2;
@@ -53,11 +54,10 @@ public class stickOrb extends AbstractOrb {
     }
 
     public void onEvoke() {
-        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new testForOrb(),1));
+        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new stick(),1));
     }
 
     public void onStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareColor.PLASMA), 0.1F));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getRandomMonster(),new DamageInfo(AbstractDungeon.player, 1, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
@@ -101,11 +101,11 @@ public class stickOrb extends AbstractOrb {
     }
 
     public AbstractOrb makeCopy() {
-        return new testOrb();
+        return new stickOrb();
     }
 
     static {
-        orbString = CardCrawlGame.languagePack.getOrbString("testForOrb");
+        orbString = CardCrawlGame.languagePack.getOrbString("stickOrb");
         DESC = orbString.DESCRIPTION;
     }
 }

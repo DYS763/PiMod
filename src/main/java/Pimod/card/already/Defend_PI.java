@@ -19,17 +19,16 @@ public class Defend_PI extends CustomCard{
     public static final String NAME;
     public static final String DESCRIPTION;
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public Defend_PI() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(CardTags.STARTER_DEFEND);
         this.baseBlock = 5;
+        this.block=this.baseBlock;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        this.addToBot(new GainBlockAction(p, p, this.block));
     }
 
     public AbstractCard makeCopy() {

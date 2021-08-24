@@ -6,5 +6,120 @@
     " 点 #y格挡 。"
   ],
   "NAME": "测试"
+  },
+  "batonOrb": {
+    "DESCRIPTION": [
+      "接力棒",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "接力棒"
+  },
+  "boomArrowOrb": {
+    "DESCRIPTION": [
+      "爆炸箭",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "爆炸箭"
+  },
+  "brokenDaggerOrb": {
+    "DESCRIPTION": [
+      "测试充能球",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "断裂的短匕"
+  },
+  "katanaOrb": {
+    "DESCRIPTION": [
+      "悲惨痛苦太刀",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "悲惨痛苦太刀"
+  },
+  "magnumOrb": {
+    "DESCRIPTION": [
+      "马格南",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "马格南"
+  },
+  "poisonDaggerOrb": {
+    "DESCRIPTION": [
+      "涂毒短匕",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "涂毒短匕"
+  },  "prismOrb": {
+  "DESCRIPTION": [
+    "棱镜",
+    " 点 #y格挡 。 NL #y激发： 获得 #b",
+    " 点 #y格挡 。"
+  ],
+  "NAME": "棱镜"
+},
+  "sickleOrb": {
+    "DESCRIPTION": [
+      "死亡巨镰",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "死亡巨镰"
+  },
+  "stickOrb": {
+    "DESCRIPTION": [
+      "木棍",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "木棍"
+  },
+  "timeMachineOrb": {
+    "DESCRIPTION": [
+      "死亡巨镰",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "死亡巨镰"
+  },
+
+  "kayaOrb": {
+    "DESCRIPTION": [
+      "kaya",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "死亡巨镰"
+  },
+
+  "yashiyaOrb": {
+    "DESCRIPTION": [
+      "yashiya",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "死亡巨镰"
+  },
+
+  "sangeOrb": {
+    "DESCRIPTION": [
+      "sange",
+      " 点 #y格挡 。 NL #y激发： 获得 #b",
+      " 点 #y格挡 。"
+    ],
+    "NAME": "死亡巨镰"
+  },
+  "emptyOrb": {
+    "DESCRIPTION": [
+      "empty",
+      "empty",
+      "empty"
+    ],
+    "NAME": "死亡巨镰"
   }
+
 }

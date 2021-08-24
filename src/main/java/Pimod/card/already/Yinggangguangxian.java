@@ -5,6 +5,7 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -33,12 +34,12 @@ public class Yinggangguangxian extends CustomCard{//“extends CustomCard” 继
 	//
 	//实例：  “获得 !M! 层 力量 。如果 力量 超过3层，额外获得 [R] 。”;
 	
-	private static final int COST = 1;//卡牌的费用。
+	private static final int COST = 0;//卡牌的费用。
 	
 	//注：以上声明的五个变量并非强制需要。仅出于代码的美观考虑而写。
 	public Yinggangguangxian() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
-		this.baseDamage = 7;
+		this.baseDamage = 4;
 		this.baseMagicNumber = 1;
 		this.magicNumber = this.baseMagicNumber;
 	}
@@ -46,6 +47,9 @@ public class Yinggangguangxian extends CustomCard{//“extends CustomCard” 继
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),AbstractGameAction.AttackEffect.LIGHTNING));
 		this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+		if(m.hasPower("Vulnerable")){
+			this.addToBot(new DrawCardAction(this.magicNumber));
+		}
 	}
 
 	public AbstractCard makeCopy() {
@@ -55,6 +59,7 @@ public class Yinggangguangxian extends CustomCard{//“extends CustomCard” 继
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.upgradeMagicNumber(1);
+			this.upgradeDamage(3);
 		}
 
 	}

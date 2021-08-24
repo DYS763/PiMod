@@ -26,7 +26,7 @@ public class changeEffect extends AbstractGameEffect {
     public static final String[] TEXT;
     private static final float DUR = 2.0F;
     private boolean hasDug = false;
-    private Color screenColor;
+    private final Color screenColor;
 
     public changeEffect() {
         this.screenColor = AbstractDungeon.fadeColor.cpy();
@@ -35,16 +35,16 @@ public class changeEffect extends AbstractGameEffect {
         ((RestRoom)AbstractDungeon.getCurrRoom()).cutFireSound();
         List<String> curses = new ArrayList();
         for(int i = AbstractDungeon.player.masterDeck.group.size() - 1; i >= 0; --i) {
-            if (((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).color == AbstractCardEnum.PI_DERIVATIONS   //遍历人物卡组，把有PI_DERIVATIONS的都删了，以及部分卡牌判断，留着学习
-                    && !((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).inBottleFlame
-                    && !((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).inBottleLightning
-                    && ((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID != "AscendersBane"
-                    && ((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID != "CurseOfTheBell"
-                    && ((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID != "Necronomicurse")
+            if (AbstractDungeon.player.masterDeck.group.get(i).color == AbstractCardEnum.PI_DERIVATIONS   //遍历人物卡组，把有PI_DERIVATIONS的都删了，以及部分卡牌判断，留着学习
+                    && !AbstractDungeon.player.masterDeck.group.get(i).inBottleFlame
+                    && !AbstractDungeon.player.masterDeck.group.get(i).inBottleLightning
+                    && AbstractDungeon.player.masterDeck.group.get(i).cardID != "AscendersBane"
+                    && AbstractDungeon.player.masterDeck.group.get(i).cardID != "CurseOfTheBell"
+                    && AbstractDungeon.player.masterDeck.group.get(i).cardID != "Necronomicurse")
             {
-                AbstractDungeon.effectList.add(new PurgeCardEffect((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)));
-                curses.add(((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i)).cardID);
-                AbstractDungeon.player.masterDeck.removeCard((AbstractCard)AbstractDungeon.player.masterDeck.group.get(i));
+                AbstractDungeon.effectList.add(new PurgeCardEffect(AbstractDungeon.player.masterDeck.group.get(i)));
+                curses.add(AbstractDungeon.player.masterDeck.group.get(i).cardID);
+                AbstractDungeon.player.masterDeck.removeCard(AbstractDungeon.player.masterDeck.group.get(i));
             }
         }
     }

@@ -23,7 +23,7 @@ public class Strike_PI extends AbstractCard {
     private static final int UPGRADE_PLUS_DMG = 3;
 
     public Strike_PI() {
-        super("Strike_PI", NAME, "cards/daji.png", 1, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, NAME, "cards/daji.png", COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.PI_COLOR, CardRarity.BASIC, CardTarget.ENEMY);
         //this.tags.add(CardTags.STARTER_STRIKE);
         //this.tags.add(CardTagEnum.SPARK);   魔理沙mod的  暂时不清楚什么作用
         this.baseDamage = 6;
@@ -32,7 +32,7 @@ public class Strike_PI extends AbstractCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard card;
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     public AbstractCard makeCopy() {

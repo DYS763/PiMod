@@ -24,7 +24,7 @@ public class stone extends CustomCard{
     private static final int COST = 0;
     private static final boolean isMine = true;
     public stone() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_COLOR, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.PI_MINERAL, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = 5;
         this.exhaust = true;
     }
